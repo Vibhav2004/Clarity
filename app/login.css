@@ -1,0 +1,7 @@
+@import url('./shared/theme.css');
+.auth-wrap { min-height: 100vh; display: grid; place-items: center; padding: 40px 20px; position: relative; overflow: hidden; }
+.auth-card { width: 100%; max-width: 440px; position: relative; z-index: 2; }
+.auth-card h1 { font-size: 28px; font-weight: 800; letter-spacing: -.02em; margin-bottom: 6px; }
+.auth-card .muted { color: var(--text-muted); font-size: 14px; margin-bottom: 28px; }
+.auth-foot { text-align: center; margin-top: 18px; font-size: 13px; color: var(--text-muted); }
+.auth-foot a { color: var(--gold-soft); font-weight: 600; }

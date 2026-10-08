@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title data-i18n="title.tracker">Your Trackers — CLARITY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tracker.css" />
+</head><body>
+<div class="scrim" id="scrim"></div>
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div>
+    <div class="mobile-bar">
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="brand"><span class="dot"></span><span>CLARITY</span></div>
+      <div style="width:38px"></div>
+    </div>
+    <main class="main">
+      <div class="main-head">
+        <div><h5 data-i18n="tracker.library">YOUR TRACKER LIBRARY</h5><h1 data-i18n="tracker.currentlyTracking"> Currently Tracking</h1><p id="welcome">Start Tracking</p></div>
+        <!-- <a class="btn btn-primary" href="new-roadmap.html">+ New roadmap</a> -->
+      </div>
+      <div id="content"></div>
+    </main>
+  </div>
+</div>
+<script src="/app/API.js"></script>
+<script type="module" src="tracker.js"></script>
+</body></html>

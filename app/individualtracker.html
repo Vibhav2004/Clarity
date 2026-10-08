@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+/>
+
+<title>Tracker Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="roadmap.css">
+<link rel="stylesheet" href="individualtracker.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <main class="main">
+
+        <!-- HEADER -->
+
+        <div class="top-bar">
+
+            <div>
+
+                <a
+                    href="tracker.html"
+                    class="back-link"
+                >
+                    ← Back To Trackers
+                </a>
+
+                <div
+                    class="badge"
+                    id="cat"
+                >
+                    
+                </div>
+
+                <h1 id="title">
+                    
+                </h1>
+
+                <p id="meta">
+                   
+                </p>
+
+            </div>
+
+            <div class="header-actions">
+
+                <button
+                    id="saveBtn"
+                    class="save-btn"
+                >
+                    Save Progress
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- OVERVIEW -->
+
+        <div class="overview-grid">
+
+            <div class="metric-card">
+
+                <span class="metric-label">
+                    Completed
+                </span>
+
+                <h2 id="completedCount">
+                    
+                </h2>
+
+            </div>
+
+            <div class="metric-card">
+
+                <span class="metric-label">
+                    Remaining
+                </span>
+
+                <h2 id="remainingCount">
+                    
+                </h2>
+
+            </div>
+
+            <div class="metric-card">
+
+                <span class="metric-label">
+                    Total Steps
+                </span>
+
+                <h2 id="totalCount">
+                    
+                </h2>
+
+            </div>
+
+            <div class="metric-card">
+
+                <span class="metric-label">
+                    Status
+                </span>
+
+                <h2 id="statusText">
+                    
+                </h2>
+
+            </div>
+
+        </div>
+
+        <!-- PROGRESS AREA -->
+
+        <div class="dashboard-grid">
+
+            <!-- RING -->
+
+            <div class="card">
+
+                <div class="section-title">
+                    Overall Progress
+                </div>
+
+                <div class="ring-wrap">
+
+                    <div
+                        class="ring"
+                        id="ring"
+                    >
+                        <div
+                            class="v"
+                            id="ringV"
+                        >
+                            0%
+                        </div>
+                    </div>
+
+                </div>
+
+                <div
+                    id="stats"
+                    class="progress-stats"
+                >
+                </div>
+
+            </div>
+
+            <!-- DONUT -->
+
+            <div class="card">
+
+                <!-- <div class="section-title">
+                    Completion Distribution
+                </div>
+
+                <canvas
+                    id="completionChart"
+                >
+                </canvas> -->
+                 <div class="section-title">
+                    Frequency Progress
+                </div>
+
+                <canvas
+                    id="weeklyChart"
+                >
+                </canvas>
+            
+            </div>
+
+        </div>
+
+        <!-- CHARTS -->
+
+        <div class="charts-grid">
+
+            <!-- EXPECTED VS REALITY -->
+
+            <div class="card">
+
+                <div class="section-title">
+                    Expected vs Reality
+                </div>
+
+                <canvas
+                    id="expectedChart"
+                >
+                </canvas>
+
+            </div>
+
+ <div style="display: none;" id="card" class="card">
+
+                <div  class="section-title">
+                    Radar Chart 
+                </div>
+
+                <canvas
+                    id="radarChart"
+                >
+                </canvas>
+
+            </div>
+             <div style="display: none;" id="card1" class="card">
+
+                <div  class="section-title">
+                    Radar Chart 
+                </div>
+
+                <canvas
+                    id="polarChart"
+                >
+                </canvas>
+
+            </div>
+
+            <!-- WEEKLY -->
+
+            <div class="card">
+
+                <!-- <div class="section-title">
+                    Weekly Progress
+                </div>
+
+                <canvas
+                    id="weeklyChart"
+                >
+                </canvas> -->
+                  <div class="section-title">
+                    Completion Distribution
+                </div>
+
+                <canvas
+                    id="completionChart"
+                >
+                </canvas>
+
+            </div>
+             
+           
+
+        </div>
+
+        <!-- CHECKLIST -->
+
+        <div class="card">
+
+            <div class="section-header">
+
+                <h2>
+                    Milestone Checklist
+                </h2>
+
+                <!-- <span id="checklistProgress">
+                    0 / 0 Complete
+                </span> -->
+
+            </div>
+
+            <div
+                class="checklist"
+                id="checklist"
+            >
+            </div>
+
+        </div>
+
+       
+        <!-- DETAILS -->
+
+        <div
+            id="trackerInfo"
+            class="tracker-info"
+        >
+        </div>
+
+    </main>
+
+</div>
+
+<!-- STEP DETAILS MODAL -->
+
+<div
+    id="stepModal"
+    class="step-modal"
+>
+
+    <div class="step-modal-content">
+
+        <button
+            class="close-modal"
+            id="closeModal"
+        >
+            ✕
+        </button>
+
+        <h2 id="modalTitle">
+            Step Title
+        </h2>
+
+        <p id="modalDescription">
+            Step Description
+        </p>
+
+        <div
+            id="modalMeta"
+            class="modal-meta"
+        >
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/app/API.js"></script>
+<script src="/app/shared/store.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script
+    type="module"
+    src="/app/individuaaltracker.js"
+></script>
+
+</body>
+</html>

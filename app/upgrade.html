@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="CLARITY turns your goals into personalized visual roadmaps with tracking, insights, and progress systems." />
+<meta property="og:title" content="CLARITY — Turn Confusion Into Clear Action" />
+<meta property="og:description" content="Personalized visual roadmaps that guide you step-by-step toward your goals." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="upgrade.css" />
+<link rel="stylesheet" href="/styles.css" />
+
+</head>
+<body>
+  <div class="price1"></div>
+        <!-- PRICING -->
+    <section id="pricing" class="section">
+     
+        
+        <h2 class="h2" >Simple plans. Serious outcomes.</h2>
+      
+      <div class="container pricing-grid">
+       
+  <div class="glass feature-card price-card">
+     <div class="plan-tooltip">
+    <strong>Perfect For</strong>
+    <p>Anyone exploring roadmap planning for the first time.</p>
+  </div>
+    <h3 class="plan-name">Free</h3>
+    <div class="price"><span>₹0</span></div>
+    <p class="tagline">Perfect for getting started.</p>
+    <div class="divider-glow"></div>
+    <ul class="checks">
+      <li><span class="bd"></span>3 roadmap generations per month</li>
+      <!-- <li><span class="bd"></span>Download roadmap</li> -->
+      <li><span class="bd"></span>1 Tracking</li>
+    </ul>
+    <a href="#" class="btn btn-ghost block">Start Free</a>
+ 
+</div>
+
+
+  <div class="glass feature-card price-card popular">
+     <div class="plan-tooltip">
+    <strong>Perfect For</strong>
+    <p>Students, Learners, creators, job seekers, and professionals managing multiple goals.</p>
+  </div>
+
+    <span class="popular-badge">Most Popular</span>
+    <h3 class="plan-name">Pro</h3>
+    <div class="price"><span>₹99</span><em>/mo</em></div>
+    <p class="tagline">For serious learners and creators.</p>
+    <div class="divider-glow"></div>
+    <ul class="checks">
+      <li><span class="bd"></span>15 roadmap generation limit</li>
+      <li><span class="bd"></span>Track up to 3 goals</li>
+      <li><span class="bd"></span>Progress dashboard</li>
+      <!-- <li><span class="bd"></span>Smart AI insights</li> -->
+      <li><span class="bd"></span>Unlimited downloads</li>
+      <!-- <li><span class="bd"></span>Premium roadmap styles</li> -->
+    </ul>
+    <a onclick="buyPlan('PRO')"  class="btn btn-gold block">Go Pro</a>
+  
+</div>
+
+
+  <div class="glass feature-card price-card">
+     <div class="plan-tooltip">
+    <strong>Perfect For</strong>
+    <p>Power users who want custom goals, advanced tracking, analytics, and complete flexibility.</p>
+  </div>
+    <span class="popular-badge">Premium</span>
+    <h3 class="plan-name">Premium</h3>
+    <div class="price"><span>₹199</span><em>/mo</em></div>
+    <p class="tagline">Full customization and advanced tracking.</p>
+    <div class="divider-glow"></div>
+    <ul class="checks">
+      <li><span class="bd"></span>Unlimited roadmap generations</li>
+      <li><span class="bd"></span>Custom goal creator</li>
+      <li><span class="bd"></span>Custom progress tracker</li>
+      <li><span class="bd"></span>Multiple goal tracker</li>
+      <li><span class="bd"></span>Advanced analytics</li>
+      <!-- <li><span class="bd"></span>Priority support</li> -->
+    </ul>
+    <a onclick="buyPlan('PREMIUM')" class="btn btn-gold block">Get Premium</a>
+  
+</div>
+   </div>   
+    </section>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="/app/API.js"></script>
+    <script src="upgrade.js"></script>
+     <script src="/app/shared/store.js"></script>
+</body>
+</html>

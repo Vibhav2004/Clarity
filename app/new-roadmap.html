@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title data-i18n="title.newRoadmap">New roadmap — CLARITY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="new-roadmap.css" />
+</head><body>
+<div class="scrim" id="scrim"></div>
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div>
+    <div class="mobile-bar">
+      <button class="menu-btn" id="menuBtn">☰</button>
+      <div class="brand"><div class="brand-mark">C</div><span>CLARITY</span></div>
+      <div style="width:38px"></div>
+    </div>
+    <main class="main">
+      <div class="wizard-shell">
+        <div class="main-head"><div><h1 data-i18n="newRoadmap.title">Generate a roadmap</h1><p data-i18n="newRoadmap.subtitle">Answer five quick questions. We'll handle the rest.</p></div></div>
+        <div class="steps" id="steps">
+          <div class="step-dot"><i></i></div><div class="step-dot"><i></i></div><div class="step-dot"><i></i></div>
+          <div class="step-dot"><i></i></div><div class="step-dot"><i></i></div>
+        </div>
+        <div id="step" class="card slide-up"></div>
+        <div class="wizard-actions">
+          <button class="btn btn-ghost" id="backBtn" data-i18n="newRoadmap.back">← Back</button>
+          <button class="btn btn-primary" id="nextBtn" data-i18n="newRoadmap.continue">Continue →</button>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<div id="loading" class="loading-overlay hidden">
+  <div class="loading-card">
+    <div class="loading-ring" id="ring"><div class="pct" id="pct">0%</div></div>
+    <h2 style="font-size:22px; font-weight:800; margin-bottom:8px" data-i18n="newRoadmap.building">Building your roadmap</h2>
+    <div class="loading-msg" id="msg" data-i18n="newRoadmap.analyzing">Analyzing your inputs…</div>
+  </div>
+</div>
+<script src="/app/API.js"></script>
+<script type="module" src="new-roadmap.js"></script>
+</body></html>

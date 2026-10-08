@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="title.dashboard">Your roadmaps — CLARITY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="scrim" id="scrim"></div>
+    <div class="app">
+      <aside class="sidebar" id="sidebar"></aside>
+      <div>
+        <div class="mobile-bar">
+          <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+            ☰
+          </button>
+          <div class="brand">
+            <span class="dot"></span>
+            <span class="name">CLARITY</span>
+            
+          </div>
+          <div style="width: 38px"></div>
+        </div>
+        <main class="main">
+          <div class="main-head">
+            <div>
+              <h5 data-i18n="dashboard.library">YOUR LIBRARY</h5>
+              <h1 data-i18n="dashboard.roadmaps">ROADMAPS</h1>
+              <p id="welcome"></p>
+            </div>
+            <a class="btn btn-primary" href="new-roadmap.html" data-i18n="dashboard.newRoadmap">+ New roadmap</a>
+          </div>
+          <div id="content"></div>
+        </main>
+      </div>
+    </div>
+    <script src="/app/API.js"></script>
+    <script type="module" src="dashboard.js"></script>
+    <script src="/app/shared/sidebar.js"></script>
+  </body>
+</html>

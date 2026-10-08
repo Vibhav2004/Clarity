@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title data-i18n="title.customTracker">Custom Tracker — CLARITY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="custom-tracker.css" />
+</head><body>
+<div class="scrim" id="scrim"></div>
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div>
+    <div class="mobile-bar">
+      <button class="menu-btn" id="menuBtn">☰</button>
+      <div class="brand"><div class="brand-mark">C</div><span>CLARITY</span></div>
+      <div style="width:38px"></div>
+    </div>
+    <main class="main">
+      <div class="main-head"><div><h1 data-i18n="customTracker.title">Custom tracker</h1><p data-i18n="customTracker.subtitle">A flexible task tracker with priorities, deadlines and substeps.</p></div></div>
+      <div id="tabs" style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px"></div>
+
+      <div class="card" style="margin-bottom:20px">
+        <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.1em; font-weight:600; margin-bottom:10px" data-i18n="customTracker.addStep">Add a step</div>
+        <div class="add-row">
+          <input id="stepTitle" class="input" placeholder="What needs to get done?" data-i18n-placeholder="customTracker.stepPlaceholder" />
+          <select id="priority" class="input" style="width:130px">
+            <option value="low" data-i18n="customTracker.priorityLow">Low</option><option value="medium" selected data-i18n="customTracker.priorityMedium">Medium</option><option value="high" data-i18n="customTracker.priorityHigh">High</option>
+          </select>
+          <input id="deadline" type="date" class="input" style="width:160px" data-i18n-placeholder="customTracker.deadline" />
+          <button id="addStepBtn" class="btn btn-primary" data-i18n="customTracker.add">Add</button>
+          <button
+    id="saveTrackerBtn"
+    class="btn btn-primary"
+>
+    Save Tracker
+</button>
+        </div>
+      </div>
+
+      <div id="steps"></div>
+    </main>
+  </div>
+</div>
+<script src="/app/API.js"></script>
+<script type="module" src="custom-tracker.js"></script>
+</body></html>

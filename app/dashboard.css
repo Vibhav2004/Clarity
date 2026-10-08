@@ -1,0 +1,48 @@
+@import url("./shared/theme.css");
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.roadmap-card {
+  cursor: pointer;
+}
+.roadmap-card .category {
+  font-size: 11px;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+.roadmap-card h3 {
+  font-size: 18px;
+  margin: 8px 0 6px;
+  font-weight: 700;
+}
+.roadmap-card .meta {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.progress-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 18px;
+}
+.progress-bar > div {
+  height: 100%;
+  background: #c8a96b;
+  border-radius: 999px;
+  transition: width 0.5s;
+}
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-muted);
+}
+.empty-state h3 {
+  color: var(--text);
+  margin: 12px 0 8px;
+  font-size: 20px;
+}

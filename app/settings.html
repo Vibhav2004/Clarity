@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title data-i18n="title.settings">Settings — CLARITY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="settings.css" />
+</head><body>
+<div class="scrim" id="scrim"></div>
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div>
+    <div class="mobile-bar">
+      <button class="menu-btn" id="menuBtn">☰</button>
+      <div class="brand"><div class="brand-mark">C</div><span>CLARITY</span></div>
+      <div style="width:38px"></div>
+    </div>
+    <main class="main">
+      <div class="main-head"><div><h1 data-i18n="settings.title">Settings</h1><p data-i18n="settings.subtitle">Preferences, plan and account controls.</p></div></div>
+      <div id="content"></div>
+    </main>
+  </div>
+</div>
+<script src="/app/API.js"></script>
+<script type="module" src="settings.js"></script>
+</body></html>

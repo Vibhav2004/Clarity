@@ -1,0 +1,49 @@
+@import url('./shared/theme.css');
+.tracker-step { padding: 16px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); margin-bottom: 12px; }
+.tracker-step.done > .step-head .s-title { text-decoration: line-through; opacity: .6; }
+.step-head { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.s-title { flex: 1 1 160px; min-width: 0; font-weight: 700; overflow-wrap: anywhere; }
+.priority { font-size: 10px; padding: 3px 8px; border-radius: 999px; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+.priority.high { background: rgba(224,89,75,.15); color: var(--danger); }
+.priority.medium { background: rgba(200,169,107,.15); color: var(--gold); }
+.priority.low { background: rgba(111,207,151,.15); color: var(--success); }
+.substeps { margin-top: 12px; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.substep { display: flex; align-items: center; gap: 10px; min-width: 0; font-size: 13px; cursor: pointer; padding: 6px 0; }
+.substep span { min-width: 0; overflow-wrap: anywhere; }
+.substep.done span { text-decoration: line-through; opacity: .5; }
+.substep .box { width: 16px; height: 16px; border-radius: 4px; border: 1.5px solid var(--border-strong); display: grid; place-items: center; flex-shrink: 0; font-size: 10px; }
+.substep.done .box { background: var(--gold); border-color: var(--gold); color: #1a1408; }
+.add-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
+.add-row #stepTitle { flex: 1 1 240px; min-width: 0; }
+.add-row #priority { flex: 0 1 130px; }
+.add-row #deadline { flex: 0 1 160px; }
+.add-row button { flex: 0 0 auto; }
+
+@media (max-width: 600px) {
+	.main { padding-top: 24px; }
+	.main-head { margin-bottom: 24px; }
+	.main-head h1 { overflow-wrap: anywhere; }
+
+	.add-row {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.add-row #stepTitle,
+	.add-row #addStepBtn,
+	.add-row #saveTrackerBtn {
+		grid-column: 1 / -1;
+	}
+
+	.add-row #priority,
+	.add-row #deadline {
+		width: 100% !important;
+		min-width: 0;
+	}
+
+	.add-row button { width: 100%; }
+	.tracker-step { padding: 12px; }
+	.step-head { flex-wrap: wrap; gap: 8px; }
+	.s-title { flex-basis: calc(100% - 34px); }
+	.substeps { padding-left: 4px; }
+}

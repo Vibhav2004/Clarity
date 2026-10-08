@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+
+  <title>
+    Custom Builder — CLARITY
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="custom.css"
+  />
+
+</head>
+
+<body>
+
+  <div class="builder-page">
+
+    <!-- HEADER -->
+
+    <header class="builder-header">
+
+      <div class="header-left">
+
+        <button>
+           <a
+                    href="dashboard.html"
+                    class="back-link"
+                >
+                    ← Back To Trackers
+                </a>
+         
+        </button>
+
+        <div>
+
+          <h1>
+            Custom Builder
+          </h1>
+
+          <p>
+            Design your own visual roadmap.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="header-right">
+
+        <input
+          id="rmName"
+          class="input"
+          placeholder="Roadmap Name"
+        />
+
+        <input
+          id="categoryName"
+          class="input"
+          placeholder="Category Name"
+        />
+
+        <select
+          id="difficulty"
+          class="input"
+        >
+          <option value="beginner">
+            Beginner
+          </option>
+
+          <option value="intermediate">
+            Intermediate
+          </option>
+
+          <option value="advanced">
+            Advanced
+          </option>
+        </select>
+
+        <button
+          id="saveBtn"
+          class="btn btn-primary"
+        >
+          Save
+        </button>
+
+      </div>
+
+    </header>
+
+    <!-- BUILDER -->
+
+    <div class="builder-shell">
+
+      <!-- TOOLBAR -->
+
+      <div class="tool-panel">
+
+        <button
+          class="tool-btn active"
+          data-tool="select"
+        >
+          ↖ Select
+        </button>
+
+        <button
+          class="tool-btn"
+          data-tool="node"
+        >
+          ＋ Add Node
+        </button>
+
+        <button
+          class="tool-btn"
+          data-tool="edge"
+        >
+          ↝ Connect
+        </button>
+
+        <button
+          id="deletebutton"
+          class="tool-btn"
+          data-tool="delete"
+        >
+          ✕ Delete
+        </button>
+
+        <div class="toolbar-divider"></div>
+
+        <div class="toolbar-group">
+
+          <span class="toolbar-label">
+            Color
+          </span>
+
+          <div class="swatches"></div>
+
+        </div>
+
+        <div class="toolbar-group">
+
+          <span class="toolbar-label">
+            Shape
+          </span>
+
+          <select
+            id="shapeSelect"
+            class="input"
+          >
+
+            <option value="rect">
+              Rectangle
+            </option>
+
+            <option value="round">
+              Rounded
+            </option>
+
+            <option value="circle">
+              Circle
+            </option>
+
+            <option value="diamond">
+              Diamond
+            </option>
+
+          </select>
+
+        </div>
+
+        <button
+          id="undoBtn"
+          class="btn btn-ghost btn-sm"
+        >
+          ↶ Undo
+        </button>
+
+        <button
+          id="redoBtn"
+          class="btn btn-ghost btn-sm"
+        >
+          ↷ Redo
+        </button>
+
+        <button
+          id="clearBtn"
+          class="btn btn-sm"
+        >
+          Clear Canvas
+        </button>
+
+      </div>
+
+      <!-- CANVAS -->
+
+      <div
+        id="board"
+        class="canvas-board"
+      ></div>
+
+    </div>
+
+  </div>
+  <!-- NODE MODAL -->
+
+<div id="nodeModal" class="node-modal">
+
+  <div class="node-modal-content">
+
+    <h2>Create Node</h2>
+
+    <input
+      id="nodeTitle"
+      type="text"
+      placeholder="Node Name"
+      class="input"
+    />
+
+    <textarea
+      id="nodeDescription"
+      placeholder="Description"
+      class="input textarea"
+    ></textarea>
+
+    <select
+      id="nodeDifficulty"
+      class="input"
+    >
+      <option value="easy">
+        easy
+      </option>
+
+      <option value="medium">
+        medium
+      </option>
+
+      <option value="hard">
+        hard
+      </option>
+       <option value="veryhard">
+        very hard
+      </option>
+    </select>
+
+    <input
+      id="nodeReference"
+      type="url"
+      placeholder="Reference Link"
+      class="input"
+    />
+
+    <div class="modal-actions">
+
+      <button
+        id="cancelNodeBtn"
+        class="btn"
+      >
+        Cancel
+      </button>
+
+      <button
+        id="createNodeBtn"
+        class="btn btn-primary"
+      >
+        Create Node
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+  <script src="/app/API.js"></script>
+  <script
+    type="module"
+    src="custom.js"
+  ></script>
+
+</body>
+
+</html>

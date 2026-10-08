@@ -1,0 +1,577 @@
+@import url("./shared/theme.css");
+
+/* ===================================
+   PAGE LAYOUT
+=================================== */
+
+*{
+  box-sizing:border-box;
+}
+
+.builder-page{
+  width:100%;
+  min-height:100vh;
+  padding:20px;
+}
+
+/* ===================================
+   HEADER
+=================================== */
+
+input{
+  height: 40px;
+}
+.builder-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-bottom:16px;
+}
+
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.header-left h1{
+  margin:0;
+}
+
+.header-left p{
+  margin:4px 0 0;
+  color:var(--text-muted);
+}
+
+.header-right{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.header-right input{
+  width: 200px;
+  gap: 10px;
+}
+.header-right select{
+  width: 200px;
+  gap: 10px;
+}
+
+
+
+.btn-primarys {
+  
+  color: #f5f4f3;
+  
+}
+/* ===================================
+   BUILDER
+=================================== */
+
+.builder-shell{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  width:100%;
+}
+
+/* ===================================
+   TOOLBAR
+=================================== */
+
+.tool-panel{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+
+  padding:14px;
+
+  border-radius:14px;
+
+  border:1px solid var(--border);
+
+  background:var(--surface);
+}
+
+.tool-btn{
+  padding:10px 14px;
+
+  border-radius:10px;
+
+  border:1px solid transparent;
+
+  color:var(--text-muted);
+
+  font-size:13px;
+
+  font-weight:600;
+
+  white-space:nowrap;
+
+  flex-shrink:0;
+
+  transition:.25s;
+}
+
+.tool-btn:hover{
+  background:rgba(255,255,255,.05);
+  color:var(--text);
+}
+
+.tool-btn.active{
+  background:rgba(200,169,107,.1);
+  border-color:var(--border-strong);
+  color:var(--gold);
+}
+
+.toolbar-divider{
+  width:1px;
+  height:34px;
+  background:var(--border);
+  flex-shrink:0;
+}
+
+.toolbar-group{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-shrink:0;
+}
+
+.toolbar-label{
+  font-size:12px;
+  font-weight:600;
+  color:var(--text-muted);
+  white-space:nowrap;
+}
+
+/* ===================================
+   COLOR PICKER
+=================================== */
+
+.swatches{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:6px;
+}
+
+.swatch{
+  width:26px;
+  height:26px;
+  border-radius:8px;
+  border:2px solid transparent;
+  cursor:pointer;
+}
+
+.swatch.active{
+  border-color:var(--text);
+}
+
+/* ===================================
+   CANVAS
+=================================== */
+
+.canvas-board{
+  position:relative;
+
+  width:100%;
+  min-height:80vh;
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  background:var(--surface);
+
+  overflow:auto;
+
+  touch-action:none;
+
+  -webkit-overflow-scrolling:touch;
+
+  background-image:
+    radial-gradient(
+      rgba(255,255,255,.08) 1px,
+      transparent 1px
+    );
+
+  background-size:24px 24px;
+}
+
+/* ===================================
+   SVG EDGES
+=================================== */
+
+.canvas-svg-edges{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+
+.canvas-svg-edges line{
+  stroke:var(--gold);
+  stroke-width:3;
+  fill:none;
+  opacity:.9;
+}
+
+/* ===================================
+   NODES
+=================================== */
+
+.cnode{
+  position:absolute;
+
+  min-width:140px;
+
+  padding:12px 16px;
+
+  border-radius:12px;
+
+  color:#1a1408;
+
+  font-weight:600;
+  font-size:14px;
+
+  cursor:move;
+
+  user-select:none;
+
+  transform:translate(-50%, -50%);
+
+  border:2px solid transparent;
+
+  box-shadow:
+    0 6px 20px -5px rgba(0,0,0,.5);
+
+  transition:.25s;
+}
+
+.cnode:hover{
+  transform:
+    translate(-50%, -50%)
+    scale(1.03);
+}
+
+.cnode.selected{
+  border-color:var(--text);
+  box-shadow:0 0 0 2px var(--text);
+}
+
+/* ===================================
+   SHAPES
+=================================== */
+
+.cnode.shape-rect{
+  border-radius:12px;
+}
+
+.cnode.shape-round{
+  border-radius:24px;
+}
+
+.cnode.shape-circle{
+  width:90px;
+  height:90px;
+
+  min-width:90px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  padding:0;
+
+  text-align:center;
+}
+
+.cnode.shape-diamond{
+  width:100px;
+  height:100px;
+
+  min-width:100px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(45deg);
+
+  border-radius:12px;
+}
+
+.cnode.shape-diamond:hover{
+  transform:
+    translate(-50%, -50%)
+    rotate(45deg)
+    scale(1.03);
+}
+
+.cnode.shape-diamond .node-text{
+  transform:rotate(-45deg);
+  text-align:center;
+}
+
+/* ===================================
+   NODE CONTENT
+=================================== */
+
+.node-text{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.node-title{
+  font-size:14px;
+  font-weight:700;
+}
+
+.node-desc{
+  font-size:11px;
+  opacity:.8;
+  font-weight:500;
+  line-height:1.4;
+}
+
+/* ===================================
+   ACTION BUTTONS
+=================================== */
+
+#clearBtn{
+  background:rgba(205,17,17,.85);
+  color:white;
+}
+
+#deletebutton{
+  color:rgba(205,17,17,.85);
+}
+
+/* ===================================
+   LARGE TABLETS
+=================================== */
+
+@media (max-width:1200px){
+
+  .canvas-board{
+    min-height:75vh;
+  }
+
+}
+
+/* ===================================
+   TABLETS
+=================================== */
+
+@media (max-width:992px){
+
+  .tool-panel{
+    flex-wrap:wrap;
+    
+    
+  }
+
+  
+
+  .canvas-board{
+    min-height:70vh;
+  }
+
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width:768px){
+
+  .builder-page{
+    padding:12px;
+  }
+
+  .builder-header{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .header-left{
+    width:100%;
+  }
+
+  .header-right{
+    width:100%;
+  }
+
+  .header-right .input,
+  .header-right select,
+  .header-right button{
+    flex:1;
+    min-width:50px;
+  }
+
+  .tool-panel{
+    flex-wrap:wrap;
+    
+    gap:8px;
+    padding:10px;
+  }
+
+  .tool-btn{
+    font-size:12px;
+    padding:8px 12px;
+  }
+
+  .canvas-board{
+    min-height:100vh;
+  }
+
+  .cnode{
+    min-width:120px;
+    padding:10px 12px;
+    font-size:13px;
+  }
+
+  .node-title{
+    font-size:13px;
+  }
+
+  .node-desc{
+    font-size:10px;
+  }
+
+}
+
+/* ===================================
+   SMALL PHONES
+=================================== */
+
+@media (max-width:576px){
+
+  .tool-panel{
+    padding:8px;
+    gap:6px;
+  }
+
+  .toolbar-label{
+    display:none;
+  }
+
+  .tool-btn{
+    font-size:11px;
+    padding:7px 10px;
+  }
+
+  .canvas-board{
+    min-height:200vh;
+  }
+
+  .cnode{
+    min-width:100px;
+    padding:8px 10px;
+  }
+
+  .cnode.shape-circle{
+    width:75px;
+    height:75px;
+    min-width:75px;
+  }
+
+  .cnode.shape-diamond{
+    width:85px;
+    height:85px;
+    min-width:85px;
+  }
+
+  .node-title{
+    font-size:12px;
+  }
+
+  .node-desc{
+    display:none;
+  }
+
+}
+
+/* ===================================
+   VERY SMALL DEVICES
+=================================== */
+
+@media (max-width:400px){
+
+  .tool-btn{
+    font-size:10px;
+    padding:6px 8px;
+  }
+
+  .canvas-board{
+    min-height:200vh;
+  }
+
+}
+
+
+/* =====================
+   NODE MODAL
+===================== */
+
+.node-modal{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,.75);
+color: white;
+  display:none;
+
+  justify-content:center;
+  align-items:center;
+
+  z-index:9999;
+}
+
+.node-modal.active{
+  display:flex;
+}
+
+.node-modal-content{
+
+  width:min(500px,90%);
+
+  background:#000000;
+  color: white;
+  border:1px solid #333;
+
+  border-radius:16px;
+
+  padding:24px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:12px;
+}
+
+.node-modal-content h2{
+  margin:0 0 10px;
+}
+
+.textarea{
+  min-height:120px;
+  resize:vertical; 
+  color: #f5f4f3;
+}
+.input{
+  color: white;
+}
+
+.modal-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+}

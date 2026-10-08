@@ -1,0 +1,72 @@
+@import url("./shared/theme.css");
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.row:last-child {
+  border-bottom: 0;
+}
+.row .label {
+  font-weight: 600;
+  font-size: 14px;
+}
+.row .sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.toggle {
+  width: 44px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.toggle.on {
+  background: white;
+}
+.toggle::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #000000;
+  transition: left 0.2s;
+}
+.toggle.on::after {
+  left: 21px;
+}
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+@media (max-width: 700px) {
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.plan-pick {
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+.plan-pick:hover {
+  border-color: var(--border-strong);
+}
+.plan-pick.current {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-glow);
+}

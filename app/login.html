@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title data-i18n="title.login">Sign in — CLARITY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="login.css" />
+</head><body>
+  <canvas id="particles-bg"></canvas>
+<div class="auth-wrap">
+  <div class="aurora"></div>
+  <div class="grid-bg" style="position:absolute;inset:0"></div>
+  <div class="auth-card card glass-strong slide-up">
+    <a class="brand" href="index.html" style="margin-bottom:24px"><span class="dot"></span><span>CLARITY</span></a>
+    <h1 data-i18n="auth.signInTitle">Welcome back.</h1>
+    <p class="muted" data-i18n="auth.signInSub">Sign in to continue your roadmap.</p>
+    <form id="loginForm" style="display:flex; flex-direction:column; gap:16px">
+      <div class="field"><label data-i18n="auth.emailLabel">Email</label><input class="input" type="email" name="email" required autocomplete="email" placeholder="you@example.com" data-i18n-placeholder="auth.emailPlaceholder"/></div>
+      <div class="field"><label data-i18n="auth.passwordLabel">Password</label><input class="input" type="password" name="password" required autocomplete="current-password" placeholder="••••••••" data-i18n-placeholder="auth.passwordPlaceholder"/></div>
+      <button class="btn btn-primary btn-block btn-lg" type="submit" data-i18n="auth.signInButton">Sign in</button>
+    </form>
+    <p class="auth-foot"><span data-i18n="auth.noAccount">Don't have an account yet?</span> <a href="register.html" data-i18n="auth.createOne">Create one</a></p>
+  </div>
+</div>
+<script src="/app/API.js"></script>
+<script src="/js/security/security.js"></script>
+<script type="module" src="login.js"></script>
+<script src="/app/shared/particle.js"></script>
+</body></html>

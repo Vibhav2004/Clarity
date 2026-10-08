@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CLARITY — Turn Confusion Into Clear Action</title>
+<meta name="description" content="CLARITY turns your goals into personalized visual roadmaps with tracking, insights, and progress systems." />
+<meta property="og:title" content="CLARITY — Turn Confusion Into Clear Action" />
+<meta property="og:description" content="Personalized visual roadmaps that guide you step-by-step toward your goals." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="mouse-tracker">👁</div>
+  <!-- Ambient background -->
+  <div class="ambient" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="particles" id="particles"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="nav-wrap">
+    <nav class="nav glass" id="nav">
+      <a href="#home" class="brand">
+        <span class="dot"></span>
+        <span class="brand-text">CLARITY</span>
+      </a>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#what">What Is It</a></li>
+        <li><a class="nav-link" href="#how">How To Use</a></li>
+        <li><a class="nav-link" href="#features">Features</a></li>
+        <li><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li><a class="nav-link" href="#about">About Us</a></li>
+        <li><a class="nav-link" href="#review">Review</a></li>
+        <!-- <li><a class="nav-link" href="#legal">Legal</a></li> -->
+      </ul>
+      <div class="nav-cta">
+        <a href="/app/register.html" class="btn btn-gold sm-hide">Start Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu glass" id="mobileMenu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#what">What Is It</a></li>
+        <li><a href="#how">How To Use</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about">About Us</a></li>
+         <li><a href="#review">Review</a></li>
+        <!-- <li><a href="#legal">Legal</a></li> -->
+        <li><a href="#pricing" class="btn btn-gold">Start Now</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="fade-up">
+          <div class="chip glass">
+            <span class="chip-dot"></span> New · Visual Goal Architecture
+          </div>
+          <h1 class="h1">Turn Confusion Into <br/><span class="gold-text">Clear Action.</span></h1>
+          <p class="lead">Personalized visual roadmaps that guide you step-by-step toward your goals. Built for people who think in systems, not to-do lists.</p>
+
+          <form class="search glass" onsubmit="event.preventDefault()">
+            <span class="prompt">›</span>
+            <input type="text" placeholder="Describe your goal — e.g. ‘Become a product designer in 6 months’" />
+            <button type="submit" class="btn btn-gold btn-sm">Generate</button>
+          </form>
+
+          <div class="hero-ctas">
+            <a href="#pricing" class="btn btn-gold pill">Start Now</a>
+            <a href="#what" class="btn btn-ghost pill">Explore Demo</a>
+          </div>
+
+          <dl class="stats">
+            <div class="glass stat"><dt>12k+</dt><dd>Roadmaps</dd></div>
+            <div class="glass stat"><dt>98%</dt><dd>Clarity Score</dd></div>
+            <div class="glass stat"><dt>4.9★</dt><dd>User Rating</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-roadmap-wrap">
+          <div class="glass roadmap-card">
+            <div class="roadmap-head">
+              <span class="live"><span class="live-dot"></span>Live Roadmap</span>
+              <span>v2.1</span>
+            </div>
+            <div class="roadmap" data-roadmap="hero">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IS IT -->
+    <section id="what" class="section">
+      <div class="container reveal">
+        <div class="section-label"><i></i><span>What Is It</span><i></i></div>
+        <h2 class="h2">A visual operating system for your <span class="gold-text">ambition</span>.</h2>
+      </div>
+      <div class="container two-col">
+        <div class="reveal">
+          <div class="glass roadmap-card">
+            <div class="roadmap" data-roadmap="what"></div>
+          </div>
+        </div>
+       
+        <ul class="bullets reveal">
+
+  <li class="glass feature-card">
+    <div class="bullet-row">
+      <span class="ico">◆</span>
+      <div>
+        <h3>Effective Roadmaps</h3>
+        <p>Transform complex goals into clear, structured roadmaps designed to keep you focused and moving forward.</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="glass feature-card">
+    <div class="bullet-row">
+      <span class="ico">◆</span>
+      <div>
+        <h3>Goal System</h3>
+        <p>Break big ambitions into manageable milestones, creating a system that drives consistent progress.</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="glass feature-card">
+    <div class="bullet-row">
+      <span class="ico">◆</span>
+      <div>
+        <h3>Trackable Progress</h3>
+        <p>Monitor every step of your journey with clear progress tracking and achievement checkpoints.</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="glass feature-card">
+    <div class="bullet-row">
+      <span class="ico">◆</span>
+      <div>
+        <h3>Custom Build</h3>
+        <p>Create personalized roadmaps and tracking systems tailored to your goals, timeline, and workflow.</p>
+      </div>
+    </div>
+  </li>
+
+</ul>
+      </div>
+    </section>
+
+    <!-- HOW TO USE -->
+    <section id="how" class="section1">
+      <div class="container reveal">
+        <div class="section-label"><i></i><span>How To Use</span><i></i></div>
+        <h2 class="h2">Five moves. <span class="gold-text">One clear path.</span></h2>
+      </div>
+      <div class="container reveal">
+        <div class="glass roadmap-card wide-scroll">
+          <div class="roadmap" data-roadmap="how"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section">
+      <div class="container reveal">
+        <div class="section-label"><i></i><span>Features</span><i></i></div>
+        <h2 class="h2">Built for clarity. <span class="gold-text">Engineered for momentum.</span></h2>
+      </div>
+      <div class="container features-grid" id="featuresGrid"></div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section">
+      <div class="container reveal">
+        <div class="section-label"><i></i><span>Pricing</span><i></i></div>
+        <h2 class="h2">Simple plans. <span class="gold-text">Serious outcomes.</span></h2>
+      </div>
+      <div class="container pricing-grid">
+       <div class="reveal">
+  <div class="glass feature-card price-card">
+     <div class="plan-tooltip">
+    <strong>Perfect For</strong>
+    <p>Anyone exploring roadmap planning for the first time.</p>
+  </div>
+    <h3 class="plan-name">Free</h3>
+    <div class="price"><span>₹0</span></div>
+    <p class="tagline">Perfect for getting started.</p>
+    <div class="divider-glow"></div>
+    <ul class="checks">
+      <li><span class="bd"></span>3 roadmap generations per month</li>
+      <!-- <li><span class="bd"></span>Download roadmap</li> -->
+      <li><span class="bd"></span>1 Tracking</li>
+    </ul>
+    <a href="#" class="btn btn-ghost block">Start Free</a>
+  </div>
+</div>
+
+<div class="reveal">
+  <div class="glass feature-card price-card popular">
+     <div class="plan-tooltip">
+    <strong>Perfect For</strong>
+    <p>Students, Learners, creators, job seekers, and professionals managing multiple goals.</p>
+  </div>
+
+    <span class="popular-badge">Most Popular</span>
+    <h3 class="plan-name">Pro</h3>
+    <div class="price"><span>₹99</span><em>/mo</em></div>
+    <p class="tagline">For serious learners and creators.</p>
+    <div class="divider-glow"></div>
+    <ul class="checks">
+      <li><span class="bd"></span>15 roadmap generation limit</li>
+      <li><span class="bd"></span>Track up to 3 goals</li>
+      <li><span class="bd"></span>Progress dashboard</li>
+      <!-- <li><span class="bd"></span>Smart AI insights</li> -->
+      <li><span class="bd"></span>Unlimited downloads</li>
+      <!-- <li><span class="bd"></span>Premium roadmap styles</li> -->
+    </ul>
+    <a href="#" class="btn btn-gold block">Go Pro</a>
+  </div>
+</div>
+
+<div class="reveal">
+  <div class="glass feature-card price-card">
+     <div class="plan-tooltip">
+    <strong>Perfect For</strong>
+    <p>Power users who want custom goals, advanced tracking, analytics, and complete flexibility.</p>
+  </div>
+    <span class="popular-badge">Premium</span>
+    <h3 class="plan-name">Premium</h3>
+    <div class="price"><span>₹199</span><em>/mo</em></div>
+    <p class="tagline">Full customization and advanced tracking.</p>
+    <div class="divider-glow"></div>
+    <ul class="checks">
+      <li><span class="bd"></span>Unlimited roadmap generations</li>
+      <li><span class="bd"></span>Custom goal creator</li>
+      <li><span class="bd"></span>Custom progress tracker</li>
+      <li><span class="bd"></span>Multiple goal tracker</li>
+      <li><span class="bd"></span>Advanced analytics</li>
+      <!-- <li><span class="bd"></span>Priority support</li> -->
+    </ul>
+    <a href="#" class="btn btn-gold block">Get Premium</a>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="container narrow reveal">
+        <div class="section-label center"><i></i><span>About Us</span><i></i></div>
+        <!-- <p class="quote">“Helping people stop feeling lost<br/>and <span class="gold-text">start taking action.”</span></p>
+        <p class="muted">CLARITY is built by a small team obsessed with structured thinking, design, and the quiet confidence that comes from knowing your next move.</p> -->
+       <p class="quote">“Turning confusion into clarity,<br/>and ideas into <span class="gold-text">actionable roadmaps.</span>”</p>
+
+<p class="muted">
+Many people know what they want to achieve but struggle with where to start, what to learn next, or how to stay consistent. CLARITY breaks complex goals into structured step-by-step roadmaps, helping you focus on the right actions, track progress, and move forward with confidence instead of uncertainty.
+</p>
+       </div>
+    </section>
+
+    <!-- review -->
+     <section class="reviews-section" id="review">
+
+        <div class="section-label center"><i></i><span>Review</span><i></i></div>
+           
+
+    <div class="reviews-track" id="reviewsTrack"></div>
+  
+
+</section>
+  </main>
+
+  <footer id="legal">
+    <div class="divider-glow"></div>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand"><span class="dot"></span><span class="brand-text">CLARITY</span></div>
+        <p class="muted small">Premium visual roadmaps for ambitious people. Designed in the dark, built for clarity.</p>
+        <div class="socials">
+          <a href="#" class="glass social">X</a>
+          <a href="#" class="glass social">in</a>
+          <a href="#" class="glass social">ig</a>
+          <a href="#" class="glass social">yt</a>
+        </div>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul class="flinks"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms &amp; Conditions</a></li><li><a href="#">Cookie Policy</a></li><li><a href="#">Refund Policy</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul class="flinks"><li><a href="#">About</a></li><li><a href="#">Contact</a></li><li><a href="#">Careers</a></li><li><a href="#">Blog</a></li></ul>
+      </div>
+    </div>
+    <div class="container foot-bottom">
+      <p>© <span id="year"></span> CLARITY. All rights reserved.</p>
+      <p class="track">Use it if your motivated enough to use it ........</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

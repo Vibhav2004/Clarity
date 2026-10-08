@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title data-i18n="title.roadmap">Roadmap — CLARITY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link rel="stylesheet" href="roadmap.css" />
+</head><body>
+<div class="scrim" id="scrim"></div>
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div>
+    <div class="mobile-bar">
+      <button class="menu-btn" id="menuBtn">☰</button>
+      <div class="brand"><div class="dot"></div><span>CLARITY</span></div>
+      <div style="width:38px"></div>
+    </div>
+    <main class="main">
+      <a href="dashboard.html" style="color:var(--text-muted); font-size:13px" data-i18n="roadmap.back">← All roadmaps</a>
+      <div class="main-head" style="margin-top:16px">
+        <div>
+          <div class="badge" id="cat" style="margin-bottom:10px"></div>
+          <h1 id="title"></h1>
+          <p id="meta"></p>
+        </div>
+      </div>
+
+      <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.1em; font-weight:600; margin-bottom:14px" data-i18n="roadmap.visualRoadmap">Visual roadmap 
+        <div class="icon-wrap">
+    <span class="download" id="downloadBtn">⭳</span>
+    <div class="tooltip" data-i18n="roadmap.download">Download Roadmap</div>
+</div>
+
+<div class="icon-wrap">
+    <span class="tracker" id="trackRoadmap">◉</span>
+    <div class="tooltip" data-i18n="roadmap.trackProgress">Track Progress</div>
+</div>
+      </div>
+      <div class="canvas-shell">
+        <!-- <div class="grid-bg"></div> -->
+        <div class="canvas-inner" id="canvasInner"></div>
+      </div>
+            <!-- <div class="track-grid" style="margin-bottom:32px">
+        <div class="card">
+          <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.1em; font-weight:600">Overall progress</div>
+          <div class="ring-wrap"><div class="ring" id="ring"><div class="v" id="ringV">0%</div></div></div>
+          <div id="stats" style="display:flex; justify-content:space-around; text-align:center;"></div>
+        </div>
+        <div class="card">
+          <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.1em; font-weight:600; margin-bottom:14px">Milestones</div>
+          <div class="checklist" id="checklist"></div>
+        </div>
+      </div> -->
+    </main>
+  </div>
+</div>
+<div id="stepModal" class="step-modal">
+  <div class="step-modal-content">
+
+    <button id="closeModal" class="close-modal">
+      ✕
+    </button>
+
+    <div id="modalBody"></div>
+
+  </div>
+</div>
+<div id="loadingOverlay" class="loading-overlay">
+
+  <div class="loading-box">
+
+    <div class="progress-ring">
+
+      <svg width="120" height="120">
+
+        <circle
+          class="progress-bg"
+          cx="60"
+          cy="60"
+          r="52"
+        ></circle>
+
+        <circle
+          id="progressCircle"
+          class="progress-fill"
+          cx="60"
+          cy="60"
+          r="52"
+        ></circle>
+
+      </svg>
+
+      <div
+        id="loadingPercent"
+        class="progress-text"
+      >
+        0%
+      </div>
+
+    </div>
+
+    <div class="loading-title">
+      Generating Roadmap
+    </div>
+
+  </div>
+
+</div>
+<script src="/app/API.js"></script>
+<script  src="/app/shared/store.js"></script>
+<script type="module" src="roadmap.js"></script>
+</body>
+</html>

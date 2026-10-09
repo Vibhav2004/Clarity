@@ -462,7 +462,7 @@ rzp.on(
         try {
 
             await fetch(
-                "http://localhost:8080/payment/failed",
+                "https://claritybackend.onrender.com/payment/failed",
                 {
                     method: "POST",
                     headers: {

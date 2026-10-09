@@ -87,7 +87,7 @@ export function logout() {
     //     return;
     // }
 
-    fetch("http://localhost:8080/LogOut-User", {
+    fetch("https://claritybackend.onrender.com/LogOut-User", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

@@ -256,11 +256,11 @@ async function buyPlan(plan) {
         // ==========================================
         // RAZORPAY OPTIONS
         // ==========================================
-
+const RAZORPAY_KEY_SECRET=`${process.env.RAZORPAY_KEY_SECRET}`;
         const options = {
 
-            key:
-                "rzp_test_Td04r8T5FdCMGv",
+            key:RAZORPAY_KEY_SECRET,
+                
 
             amount:
                 order.amount,
@@ -404,7 +404,7 @@ async function buyPlan(plan) {
         try {
 
             await fetch(
-                "http://localhost:8080/payment/failed",
+                "https://claritybackend.onrender.com/payment/failed",
                 {
                     method: "POST",
                     headers: {

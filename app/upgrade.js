@@ -259,7 +259,7 @@ async function buyPlan(plan) {
 const RAZORPAY_KEY_SECRET=`${process.env.RAZORPAY_KEY_SECRET}`;
         const options = {
 
-            key:RAZORPAY_KEY_SECRET,
+            key:"rzp_test_Td04r8T5FdCMGv",
                 
 
             amount:

@@ -17,12 +17,43 @@
     <form id="loginForm" style="display:flex; flex-direction:column; gap:16px">
       <div class="field"><label data-i18n="auth.emailLabel">Email</label><input class="input" type="email" name="email" required autocomplete="email" placeholder="you@example.com" data-i18n-placeholder="auth.emailPlaceholder"/></div>
       <div class="field"><label data-i18n="auth.passwordLabel">Password</label><input class="input" type="password" name="password" required autocomplete="current-password" placeholder="••••••••" data-i18n-placeholder="auth.passwordPlaceholder"/></div>
+     
+
+<div class="captcha-section"> <label class="captcha-label">SECURITY VERIFICATION</label> <div class="captcha-card"> <div id="registerCaptcha"></div> </div> <p class="captcha-hint"> Verify that you're human to continue. </p> </div>
+
+ 
+<!-- <div class="captcha-section">
+    <label class="captcha-label">SECURITY VERIFICATION</label>
+
+
+<div class="captcha-card">
+    <div
+        class="g-recaptcha"
+        data-sitekey="6LfZQ-gtAAAAAJ4oMYDd44mAyrKP9nw3iBMkboQ9"
+        
+        data-theme="dark">
+    </div>
+</div>
+
+<p class="captcha-hint">
+    Verify that you're human to continue.
+</p>
+
+</div> -->
+
+
+    
+     
       <button class="btn btn-primary btn-block btn-lg" type="submit" data-i18n="auth.signInButton">Sign in</button>
     </form>
     <p class="auth-foot"><span data-i18n="auth.noAccount">Don't have an account yet?</span> <a href="register.html" data-i18n="auth.createOne">Create one</a></p>
   </div>
 </div>
 <script src="/app/API.js"></script>
+<script> window.onRegisterCaptchaLoaded = function () { window.dispatchEvent(new Event("recaptcha-api-ready")); }; </script>
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onRegisterCaptchaLoaded&render=explicit" async defer> </script>
+
 <script src="/js/security/security.js"></script>
 <script type="module" src="login.js"></script>
 <script src="/app/shared/particle.js"></script>

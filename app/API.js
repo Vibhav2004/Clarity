@@ -1,7 +1,7 @@
 // import { logout } from "./shared/store";
 
-// const API_BASE_URL = "http://localhost:8080";
-const API_BASE_URL = "https://claritybackend.onrender.com";
+const API_BASE_URL = "http://localhost:8080";
+// const API_BASE_URL = "https://claritybackend.onrender.com";
  //const API_BASE_URL = "http://192.168.0.178:8080";
 window.API = Object.freeze({
   loginUser: () => `${API_BASE_URL}/Login-User`,

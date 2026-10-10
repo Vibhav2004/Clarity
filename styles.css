@@ -810,10 +810,11 @@ ul{
 ========================================================= */
 
 .chip{
+  margin-top: 24px;
   display:inline-flex;
 
   align-items:center;
-
+  
   gap:8px;
 
   border-radius:9999px;

@@ -10,7 +10,7 @@ try {
 //   const response = await fetch(
 //         API.allTrackers(user.email)
 //   );
-const sessionId = sessionStorage.getItem("sessionId");
+const sessionId = localStorage.getItem("sessionId");
 
 const response = await fetch(
     API.allTrackers(user.email),
@@ -261,7 +261,7 @@ document.addEventListener("click", async (e) => {
 
     if (e.target.id === "deleteTrackersBtn") {
         const email = user.email;
-        const sessionId = sessionStorage.getItem("sessionId");
+        const sessionId = localStorage.getItem("sessionId");
         const selectedIds =
             [
                 ...document.querySelectorAll(

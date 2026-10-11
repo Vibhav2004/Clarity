@@ -17,7 +17,7 @@ async function render() {
     // const response = await fetch(
     //   API.profile(user.email)
     // );
-    const sessionId = sessionStorage.getItem("sessionId");
+    const sessionId = localStorage.getItem("sessionId");
 
 const response = await fetch(
     API.profile(user.email),
@@ -313,7 +313,7 @@ async function OtpVerification(email) {
   
 
     try {
-        const sessionId = sessionStorage.getItem("sessionId");
+        const sessionId = localStorage.getItem("sessionId");
 
         const response =
             await fetch(
@@ -385,7 +385,7 @@ document.addEventListener("click", async function (event) {
     }
 
     try {
-        const sessionId = sessionStorage.getItem("sessionId");
+        const sessionId = localStorage.getItem("sessionId");
 
         const response = await fetch(
           API.deleteAccount(),

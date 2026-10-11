@@ -7,7 +7,7 @@ verifyButton.addEventListener("click", async function (event) {
     const otpInput = document.querySelector(".form-card-input");
     const otp = otpInput.value.trim();
 
-    const email = sessionStorage.getItem("otp_email");
+    const email = localStorage.getItem("otp_email");
   
     try {
 

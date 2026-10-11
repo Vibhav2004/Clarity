@@ -20,7 +20,7 @@ async function buyPlan(plan) {
         // ==========================================
 
         const sessionId =
-            sessionStorage.getItem("sessionId");
+            localStorage.getItem("sessionId");
 
 
         // ==========================================

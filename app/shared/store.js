@@ -94,7 +94,7 @@ export function logout() {
         },
         body: JSON.stringify({
             email: email,
-            sessionID: sessionStorage.getItem("sessionId") // Include sessionId if needed
+            sessionID: localStorage.getItem("sessionId") // Include sessionId if needed
         })
     })
     .then(response => {
@@ -745,7 +745,7 @@ async function checkPlanStatus(email) {
     //   API.plan(email)
     // );
     // const sessionId = sessionStorage.getItem("sessionId");
- const sessionId = sessionStorage.getItem("sessionId");
+ const sessionId = localStorage.getItem("sessionId");
 const response = await fetch(
     API.plan(),
     {

@@ -5061,7 +5061,7 @@ else if (tracker.type === "CustomRoadmap") {
 
         jsonData: JSON.stringify(data)
     };
-   const sessionId= sessionStorage.getItem("sessionId");
+   const sessionId= localStorage.getItem("sessionId");
     const finaltrackerPayload = {
         trackerData: trackerPayload,
         sessionID: sessionId,

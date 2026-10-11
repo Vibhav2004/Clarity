@@ -89,7 +89,7 @@ function friendlyApiError(status, responseText = "") {
   if (/SESSION_EXPIRED|INVALID_SESSION|UNAUTHORIZED/.test(code)) return { title: "Session Expired", message: "Please sign in again to continue.", type: "warning" };
   if (status === 400) return { title: "Check Your Request", message: "Some information is missing or invalid. Review the form and try again.", type: "warning" };
   if (status === 401) return { title: "Sign-In Required", message: "Your session may have expired. Sign in again to continue.", type: "warning" };
-  if (status === 403) return { title: "Access Not Available", message: "You do not have permission to use this feature, or your plan may need an upgrade.", type: "warning", actionLabel: "View Plans", onAction: () => { window.location.href = "/app/upgrade.html"; } };
+  if (status === 4088) return { title: "Access Not Available", message: "You do not have permission to use this feature, or your plan may need an upgrade.", type: "warning", actionLabel: "View Plans", onAction: () => { window.location.href = "/app/upgrade.html"; } };
   if (status === 404) return { title: "Item Not Found", message: "The requested information could not be found. Refresh and try again.", type: "warning" };
   if (status === 409) return { title: "Request Conflict", message: "This change conflicts with an existing record. Review your current items and try again.", type: "warning" };
   if (status === 429) return { title: "Please Wait Before Trying Again", message: "Too many requests were made. Wait a little and try again.", type: "warning" };

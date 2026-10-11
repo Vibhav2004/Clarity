@@ -270,7 +270,7 @@ async function saveTracker(
     //                 )
     //         }
     //     );
-    const sessionId = localStorage.getItem("sessionId");
+    const sessionId = sessionStorage.getItem("sessionId");
 
 const payload = {
     trackerData: trackerData,
@@ -724,7 +724,7 @@ const email = user.currentUser;
     );
 
     // const res = await fetch(url);
-    const sessionId = localStorage.getItem("sessionId");
+    const sessionId = sessionStorage.getItem("sessionId");
 
 const res = await fetch(url, {
     method: "POST",

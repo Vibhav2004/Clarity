@@ -5061,13 +5061,15 @@ else if (tracker.type === "CustomRoadmap") {
 
         jsonData: JSON.stringify(data)
     };
-   const sessionId= localStorage.getItem("sessionId");
+   const sessionId= sessionStorage.getItem("sessionId");
     const finaltrackerPayload = {
         trackerData: trackerPayload,
         sessionID: sessionId,
         email: tracker.userEmail
     };
 
+    console.log("trackerPayload:", trackerPayload);
+  console.log("finaltrackerPayload:", finaltrackerPayload);
     // ================================
     // SAVE TO BACKEND
     // ================================

@@ -1,13 +1,10 @@
-export async function onRequest(context) {
-const keyId = context.env.RAZORPAY_KEY_ID;
+async function getRazorpayKey() {
+    const response = await fetch("/config");
 
-if (!keyId) {
-    return Response.json(
-        { error: "Razorpay Key ID is not configured" },
-        { status: 500 }
-    );
-}
+    if (!response.ok) {
+        throw new Error("Failed to load Razorpay Key ID");
+    }
 
-return Response.json({ razorpayKeyId: keyId });
-
+    const config = await response.json();
+    return config.razorpayKeyId;
 }

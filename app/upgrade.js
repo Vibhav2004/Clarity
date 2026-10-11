@@ -188,16 +188,16 @@ async function buyPlan(plan) {
         // ==========================================
         // RAZORPAY OPTIONS
         // ==========================================
-async function getRazorpayKey() {
-    const response = await fetch("/config");
+// async function getRazorpayKey() {
+//     const response = await fetch("/config");
 
-    if (!response.ok) {
-        throw new Error("Failed to load Razorpay Key ID");
-    }
+//     if (!response.ok) {
+//         throw new Error("Failed to load Razorpay Key ID");
+//     }
 
-    const config = await response.json();
-    return config.razorpayKeyId;
-}
+//     const config = await response.json();
+//     return config.razorpayKeyId;
+// }
 
 const razorpayKeyId = await getRazorpayKey();
         const options = {

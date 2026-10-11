@@ -188,16 +188,7 @@ async function buyPlan(plan) {
         // ==========================================
         // RAZORPAY OPTIONS
         // ==========================================
-// async function getRazorpayKey() {
-//     const response = await fetch("/config");
 
-//     if (!response.ok) {
-//         throw new Error("Failed to load Razorpay Key ID");
-//     }
-
-//     const config = await response.json();
-//     return config.razorpayKeyId;
-// }
 
 const razorpayKeyId = await getRazorpayKey();
         const options = {
@@ -461,4 +452,19 @@ rzp.on(
             "Unable to start payment. Please try again."
         );
     }
+}
+async function getRazorpayKey() {
+    const response = await fetch("/config");
+
+    if (!response.ok) {
+        throw new Error("Failed to load Razorpay Key ID");
+    }
+
+    const config = await response.json();
+
+    if (!config.razorpayKeyId) {
+        throw new Error("Razorpay Key ID is missing");
+    }
+
+    return config.razorpayKeyId;
 }

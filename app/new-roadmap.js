@@ -70,7 +70,6 @@ const QUESTIONS = [
 async function fetchCategories() {
   // const res = await fetch(API.roadmapCategories());
   const sessionId = sessionStorage.getItem("sessionId");
-console.log("Session ID for fetching categories:", sessionId);
 const res = await fetch(
     API.roadmapCategories(),
     {

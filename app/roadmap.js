@@ -277,7 +277,6 @@ const payload = {
     email: user.email,
     sessionID: sessionId
 };
-console.log(payload)
 const res = await fetch(
     API.saveTracker(),
     {
@@ -291,18 +290,12 @@ const res = await fetch(
     }
 );
 
-    const result =
-        await response.json();
-
-    if (!response.ok) {
-
-        throw new Error(
-            result.message ||
-            "Failed to save tracker"
-        );
+    if (!res.ok) {
+      const errorText = await res.text();
+      throw new Error(errorText || "Failed to save tracker");
     }
 
-    return result;
+    return await res.json();
 }
 
 async function addToTracker() {
@@ -342,15 +335,11 @@ async function addToTracker() {
                 trackerData
             );
 
-        alert(
-            result.message
-        );
+        showSuccess("Tracker Saved", result.message || "Your tracker was saved successfully.");
 
     } catch (error) {
 
-        alert(
-            error.message
-        );
+        handleApiError(error, "Unable to Save Tracker");
 
         console.error(
             error
@@ -748,8 +737,6 @@ const res = await fetch(url, {
 });
 
     if (!res.ok) {
-      alert("Response");
-      window.location.href = "/app/upgrade.html";
       throw new Error("Failed to fetch roadmap");
     }
 

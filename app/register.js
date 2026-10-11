@@ -169,7 +169,6 @@ console.log("CAPTCHA token received:", Boolean(recaptchaToken));
         password,
         recaptchaToken
     };
-console.log('User Data:', userData); // Log the user data for debugging purposes
     const response = await fetch(API.registerUser(), {
         method: 'POST',
         headers: {

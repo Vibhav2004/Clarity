@@ -302,7 +302,6 @@ document.addEventListener("click", function (event) {
 
 OtpVerification(email)
          
-    console.log("Password:", password);
 });
 
 

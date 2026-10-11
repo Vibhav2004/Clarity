@@ -5068,8 +5068,6 @@ else if (tracker.type === "CustomRoadmap") {
         email: tracker.userEmail
     };
 
-    console.log("trackerPayload:", trackerPayload);
-  console.log("finaltrackerPayload:", finaltrackerPayload);
     // ================================
     // SAVE TO BACKEND
     // ================================

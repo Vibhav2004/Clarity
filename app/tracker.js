@@ -261,7 +261,6 @@ document.addEventListener("click", async (e) => {
 
     if (e.target.id === "deleteTrackersBtn") {
         const email = user.email;
-        console.log(email);
         const sessionId = sessionStorage.getItem("sessionId");
         const selectedIds =
             [
@@ -307,7 +306,6 @@ document.addEventListener("click", async (e) => {
             email: email,
             sessionID: sessionId
         };
-console.log("Payload for deletion:", payload);
             const response =
                 await fetch(
                     API.deleteTrackers(),

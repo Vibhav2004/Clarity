@@ -166,10 +166,7 @@ async function buyPlan(plan) {
 
         if (!order.id) {
 
-            console.error(
-                "Invalid Razorpay order:",
-                order
-            );
+            console.error("Invalid Razorpay order response.");
 
             alert(
                 "Invalid payment order received."
@@ -177,12 +174,6 @@ async function buyPlan(plan) {
 
             return;
         }
-
-
-        console.log(
-            "Razorpay order:",
-            order.id
-        );
 
 
         // ==========================================
@@ -219,12 +210,6 @@ const razorpayKeyId = await getRazorpayKey();
                 async function(paymentResponse) {
 
                     try {
-
-                        console.log(
-                            "Razorpay payment completed:",
-                            paymentResponse
-                        );
-
 
                         // ==================================
                         // VERIFY PAYMENT
@@ -277,10 +262,7 @@ const razorpayKeyId = await getRazorpayKey();
                             const errorText =
                                 await verifyResponse.text();
 
-                            console.error(
-                                "Payment verification failed:",
-                                errorText
-                            );
+                            console.error("Payment verification rejected by the server.");
 
                             alert(
                                 "Payment verification failed. Your subscription was not activated."
@@ -297,10 +279,33 @@ const razorpayKeyId = await getRazorpayKey();
                         const result =
                             await verifyResponse.text();
 
-                        console.log(
-                            "Payment verification result:",
-                            result
-                        );
+                        let verificationRejected = !result.trim();
+                        try {
+                            const parsedResult = JSON.parse(result);
+                            const responseState = [
+                                parsedResult.status,
+                                parsedResult.code,
+                                parsedResult.message,
+                                parsedResult.error
+                            ].filter(Boolean).join(" ");
+                            verificationRejected = verificationRejected ||
+                                parsedResult.success === false ||
+                                parsedResult.verified === false ||
+                                parsedResult.status === false ||
+                                parsedResult.ok === false ||
+                                /(?:PAYMENT.*(?:FAIL|REJECT|INVALID|NOT VERIFIED)|\b(?:FAILED|ERROR|INVALID|NOT_VERIFIED|REJECTED)\b)/i.test(responseState);
+                        } catch {
+                            verificationRejected = verificationRejected ||
+                                /(?:PAYMENT.*(?:FAIL|REJECT|INVALID|NOT VERIFIED)|\b(?:FAILED|ERROR|INVALID|NOT_VERIFIED|REJECTED)\b)/i.test(result.trim());
+                        }
+
+                        if (verificationRejected) {
+                            showWarning(
+                                "Payment Verification Pending",
+                                "We could not confirm your payment yet. Please check your payment status before attempting another payment."
+                            );
+                            return;
+                        }
 
 
                         alert(
@@ -364,9 +369,6 @@ const razorpayKeyId = await getRazorpayKey();
             console.error(err);
         }
 
-        console.log(
-            "Payment window closed."
-        );
     }
 }
         };

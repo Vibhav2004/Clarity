@@ -1,0 +1,112 @@
+.clarity-notifications {
+  position: fixed;
+  z-index: 100000;
+  top: 20px;
+  right: 20px;
+  display: grid;
+  gap: 10px;
+  width: min(420px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.clarity-notice {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto auto;
+  align-items: start;
+  gap: 12px;
+  padding: 16px;
+  color: var(--fg, #fff);
+  background: rgba(22, 22, 22, .97);
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-left: 3px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .48);
+  pointer-events: auto;
+  animation: clarity-notice-enter .22s ease-out both;
+}
+
+.clarity-notice-error { border-left-color: #e78383; }
+.clarity-notice-warning { border-left-color: #d8bd78; }
+.clarity-notice-success { border-left-color: #84c99c; }
+.clarity-notice-info { border-left-color: #aaa; }
+
+.clarity-notice-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  color: #dedede;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.clarity-notice-error .clarity-notice-icon { color: #f09a9a; }
+.clarity-notice-warning .clarity-notice-icon { color: #e6d18f; }
+.clarity-notice-success .clarity-notice-icon { color: #91d5a8; }
+
+.clarity-notice-content { min-width: 0; }
+.clarity-notice-title {
+  display: block;
+  margin: 1px 0 4px;
+  font-size: 14px;
+  line-height: 1.35;
+}
+.clarity-notice-message {
+  margin: 0;
+  color: #c2c2c2;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.clarity-notice-dismiss,
+.clarity-notice-action {
+  color: #ddd;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 7px;
+  cursor: pointer;
+  font: inherit;
+}
+.clarity-notice-dismiss {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font-size: 20px;
+  line-height: 1;
+}
+.clarity-notice-action {
+  align-self: center;
+  padding: 7px 10px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.clarity-notice-action:hover,
+.clarity-notice-dismiss:hover { background: rgba(255, 255, 255, .1); }
+.clarity-notice button:focus-visible {
+  outline: 2px solid #e0c58a;
+  outline-offset: 2px;
+}
+.clarity-notice.is-leaving { animation: clarity-notice-exit .2s ease-in both; }
+
+@keyframes clarity-notice-enter {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes clarity-notice-exit {
+  to { opacity: 0; transform: translateY(-5px); }
+}
+
+@media (max-width: 520px) {
+  .clarity-notifications { top: 12px; right: 12px; width: calc(100vw - 24px); }
+  .clarity-notice { grid-template-columns: 30px minmax(0, 1fr) auto; gap: 9px; padding: 13px; }
+  .clarity-notice-icon { width: 28px; height: 28px; }
+  .clarity-notice-action { grid-column: 2; justify-self: start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clarity-notice,
+  .clarity-notice.is-leaving { animation-duration: .01ms; }
+}

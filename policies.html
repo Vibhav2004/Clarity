@@ -1,0 +1,1221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about CLARITY, our services, company information, contact details, subscriptions, payments, privacy and policies.">
+    <meta name="theme-color" content="#0B0B0B">
+    <title>Company | CLARITY</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           CLARITY COMPANY PAGE
+           Black / White Minimalist Theme
+        ======================================== */
+
+        :root {
+            --bg: #0B0B0B;
+            --surface: #161616;
+            --fg: #ffffff;
+            --muted: #a8a8a8;
+            --border: rgba(255,255,255,.08);
+            --gold: #ffffff;
+            --gold-soft: #ffffff;
+            --radius: .75rem;
+            --font: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border-color: var(--border);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 28px;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: var(--bg);
+            color: var(--fg);
+            font-family: var(--font);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(
+                    ellipse at 15% 0%,
+                    rgba(255,255,255,.035),
+                    transparent 45%
+                ),
+                radial-gradient(
+                    ellipse at 90% 80%,
+                    rgba(255,255,255,.025),
+                    transparent 45%
+                );
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color .25s ease, background .25s ease,
+                        border-color .25s ease, transform .25s ease;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        a:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+        }
+
+        ::selection {
+            background: rgba(255,255,255,.2);
+            color: #fff;
+        }
+
+        /* HEADER */
+
+        header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 20px max(5%, calc((100% - 1200px) / 2));
+            background: rgba(11,11,11,.85);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .3em;
+        }
+
+        .logo::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(255,255,255,.6);
+        }
+
+        .back {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 9px 17px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 9999px;
+            background: rgba(255,255,255,.03);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .back:hover {
+            background: rgba(255,255,255,.09);
+            border-color: rgba(255,255,255,.25);
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            z-index: 1;
+            padding: 76px 24px 42px;
+            text-align: center;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 7px 15px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 9999px;
+            background: rgba(255,255,255,.025);
+            color: var(--muted);
+            font-size: 10px;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+        }
+
+        .tag::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 0 8px rgba(255,255,255,.5);
+        }
+
+        .hero h1 {
+            margin: 23px auto 14px;
+            font-size: clamp(2.3rem, 5vw, 4rem);
+            line-height: 1.08;
+            letter-spacing: -.045em;
+            font-weight: 600;
+        }
+
+        .hero p {
+            max-width: 660px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* MAIN LAYOUT */
+
+        .layout {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 235px minmax(0, 1fr);
+            align-items: start;
+            gap: 25px;
+            width: min(1200px, calc(100% - 48px));
+            margin: 18px auto 75px;
+        }
+
+        nav,
+        .policy {
+            background: linear-gradient(
+                180deg,
+                rgba(255,255,255,.035),
+                rgba(255,255,255,.012)
+            );
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 18px;
+            backdrop-filter: blur(20px) saturate(140%);
+            -webkit-backdrop-filter: blur(20px) saturate(140%);
+        }
+
+        /* COMPANY NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 22px;
+            padding: 19px 13px;
+        }
+
+        nav h3 {
+            padding: 0 10px;
+            margin-bottom: 12px;
+            color: #888;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+        }
+
+        nav .nav-divider {
+            height: 1px;
+            margin: 18px 10px;
+            background: rgba(255,255,255,.08);
+        }
+
+        nav a {
+            display: block;
+            padding: 9px 11px;
+            margin: 3px 0;
+            border: 1px solid transparent;
+            border-radius: 9px;
+            color: #b8b8b8;
+            font-size: 12px;
+            line-height: 1.55;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #fff;
+            background: rgba(255,255,255,.055);
+            border-color: rgba(255,255,255,.07);
+        }
+
+        nav a:hover {
+            transform: translateX(2px);
+        }
+
+        main {
+            min-width: 0;
+        }
+
+        /* CONTENT CARDS */
+
+        .policy {
+            position: relative;
+            overflow: hidden;
+            padding: clamp(24px, 4vw, 38px);
+            margin-bottom: 20px;
+            scroll-margin-top: 22px;
+            animation: fade-up .55s ease both;
+            transition: border-color .3s ease;
+        }
+
+        .policy:hover {
+            border-color: rgba(255,255,255,.15);
+        }
+
+        .policy h2 {
+            margin-bottom: 13px;
+            color: #fff;
+            font-size: clamp(21px, 2.5vw, 25px);
+            font-weight: 600;
+            letter-spacing: -.035em;
+            line-height: 1.35;
+        }
+
+        .policy h3 {
+            margin: 25px 0 8px;
+            color: #f2f2f2;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: -.01em;
+        }
+
+        .policy p {
+            margin: 11px 0;
+            color: #b3b3b3;
+            font-size: 13px;
+            line-height: 1.9;
+            overflow-wrap: anywhere;
+        }
+
+        .policy strong {
+            color: #f4f4f4;
+            font-weight: 600;
+        }
+
+        .policy ul {
+            padding: 0;
+            margin: 13px 0;
+            list-style: none;
+        }
+
+        .policy li {
+            position: relative;
+            padding-left: 21px;
+            margin: 9px 0;
+            color: #b3b3b3;
+            font-size: 13px;
+            line-height: 1.85;
+        }
+
+        .policy li::before {
+            content: "";
+            position: absolute;
+            left: 2px;
+            top: 10px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 0 7px rgba(255,255,255,.2);
+        }
+
+        .policy a {
+            color: #fff;
+            text-decoration: underline;
+            text-decoration-color: rgba(255,255,255,.35);
+            text-underline-offset: 4px;
+        }
+
+        .policy a:hover {
+            text-decoration-color: #fff;
+        }
+
+        .updated {
+            display: block;
+            margin-bottom: 20px;
+            color: #858585 !important;
+            font-size: 10px !important;
+            letter-spacing: .04em;
+        }
+
+        .notice {
+            margin: 23px 0 4px;
+            padding: 15px 17px;
+            border: 1px solid rgba(255,255,255,.1);
+            border-left: 2px solid #fff;
+            border-radius: 0 11px 11px 0;
+            background: rgba(255,255,255,.035);
+            color: #c8c8c8;
+            font-size: 12px;
+            line-height: 1.85;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            padding: 10px 16px;
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 999px;
+            background: rgba(255,255,255,.04);
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .contact-link:hover {
+            background: rgba(255,255,255,.1);
+        }
+
+        /* FOOTER */
+
+        footer {
+            position: relative;
+            z-index: 1;
+            margin-top: 55px;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(255,255,255,.07);
+            background: rgba(255,255,255,.008);
+            color: var(--muted);
+            text-align: center;
+            font-size: 11px;
+        }
+
+        footer p {
+            margin: 8px 0;
+            line-height: 1.9;
+        }
+
+        footer .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            margin-top: 14px;
+        }
+
+        footer a {
+            color: rgba(255,255,255,.72);
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .policy:nth-child(2) { animation-delay: .04s; }
+        .policy:nth-child(3) { animation-delay: .08s; }
+
+        /* SCROLLBAR */
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 999px;
+            background: #555;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #fff;
+        }
+
+        /* TABLET */
+
+        @media (max-width: 900px) {
+            .layout {
+                grid-template-columns: 200px minmax(0, 1fr);
+                gap: 16px;
+            }
+
+            nav {
+                padding: 15px 9px;
+            }
+
+            .policy {
+                padding: 24px;
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 680px) {
+            header {
+                padding: 17px 19px;
+            }
+
+            .hero {
+                padding: 57px 21px 32px;
+            }
+
+            .hero p {
+                font-size: 13px;
+            }
+
+            .layout {
+                width: calc(100% - 28px);
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin-top: 10px;
+            }
+
+            nav {
+                position: static;
+                padding: 17px;
+            }
+
+            nav .nav-divider {
+                margin: 14px 10px;
+            }
+
+            nav a {
+                display: inline-block;
+                padding: 8px 11px;
+                margin: 3px 2px;
+                border: 1px solid rgba(255,255,255,.07);
+                border-radius: 999px;
+                font-size: 11px;
+            }
+
+            nav a:hover {
+                transform: none;
+            }
+
+            .policy {
+                padding: 22px 18px;
+                border-radius: 15px;
+            }
+
+            .policy h2 {
+                font-size: 21px;
+            }
+
+            .policy h3 {
+                margin-top: 22px;
+                font-size: 13px;
+            }
+
+            .policy p,
+            .policy li {
+                font-size: 12px;
+            }
+
+            footer {
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .logo {
+                font-size: 11px;
+                letter-spacing: .2em;
+            }
+
+            .back {
+                padding: 8px 11px;
+                font-size: 11px;
+            }
+
+            .hero h1 {
+                font-size: 31px;
+            }
+
+            .policy {
+                padding: 18px 14px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a class="logo" href="/app/" aria-label="CLARITY home">CLARITY</a>
+    <a class="back" href="/index.html">Back to App</a>
+</header>
+
+<section class="hero">
+    <span class="tag">COMPANY INFORMATION</span>
+    <h1>Company</h1>
+    <p>
+        Learn about CLARITY, explore our services, find contact information
+        and read the policies that govern your use of our platform.
+    </p>
+</section>
+
+<div class="layout">
+
+    <nav aria-label="Company and legal navigation">
+        <h3>Company</h3>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="/index.html#">Careers</a>
+        <a href="/index.html#">Blog</a>
+
+        <div class="nav-divider"></div>
+
+        <h3>Policies & Legal</h3>
+        <a href="#terms">Terms & Conditions</a>
+        <a href="#subscription">Subscription Plans</a>
+        <a href="#payment">Payments & Security</a>
+        <a href="#refund">Refund Policy</a>
+        <a href="#cancellation">Cancellation Policy</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#delivery">Digital Service Delivery</a>
+        <a href="#acceptable">Acceptable Use</a>
+      
+    </nav>
+
+    <main>
+
+        <!-- ABOUT -->
+
+        <section class="policy" id="about">
+            <h2>About CLARITY</h2>
+
+            <p class="updated">ABOUT OUR COMPANY</p>
+
+            <p>
+                CLARITY is an online learning and productivity platform
+                designed to help people organize their goals, generate
+                structured learning roadmaps and track their progress.
+            </p>
+
+            <h3>Our Purpose</h3>
+            <p>
+                We aim to make learning more organized and manageable by
+                providing tools that help users plan goals, follow learning
+                steps and monitor their progress in one place.
+            </p>
+
+            <h3>What We Offer</h3>
+            <ul>
+                <li>Learning roadmap generation based on user goals and preferences.</li>
+                <li>Progress tracking and learning organization.</li>
+                <li>Custom roadmaps and trackers where included in the selected plan.</li>
+                <li>Free and paid subscription options as displayed on the platform.</li>
+            </ul>
+
+            <h3>Our Platform</h3>
+            <p>
+                CLARITY is provided as a digital web service. Features,
+                availability and usage limits depend on the plan displayed
+                on our website. Our tools are intended to support planning
+                and learning; individual outcomes depend on each user's
+                goals, effort and circumstances.
+            </p>
+
+            <p>
+                For questions, feedback, payment issues or assistance,
+                please visit our contact information below.
+            </p>
+
+            <a class="contact-link" href="#contact">Contact CLARITY</a>
+        </section>
+
+        <!-- TERMS -->
+
+        <section class="policy" id="terms">
+            <h2>Terms & Conditions</h2>
+            <p class="updated">Last updated: October 11, 2026</p>
+
+            <p>
+                These Terms and Conditions govern your access to and use of
+                CLARITY, a digital web application providing learning roadmaps,
+                roadmap generation, progress tracking and related productivity
+                features. References to "CLARITY", "we", "our" and "us" mean
+                the operator of the platform.
+            </p>
+
+            <p>
+                By creating an account, accessing the service or purchasing a
+                paid plan, you agree to these terms and the policies published
+                on this page. If you do not agree, please do not use the service.
+            </p>
+
+            <h3>Eligibility and Accounts</h3>
+            <ul>
+                <li>You must provide accurate, complete and current account information.</li>
+                <li>You are responsible for maintaining the confidentiality of your credentials.</li>
+                <li>You should promptly notify us of suspected unauthorized account access.</li>
+                <li>You must not impersonate another person or use the service for unlawful purposes.</li>
+            </ul>
+
+            <h3>Nature of the Service</h3>
+            <p>
+                CLARITY provides digital educational planning and tracking
+                tools. Roadmaps are intended to support learning and
+                organization. We do not guarantee employment, examination
+                results, certifications, income, mastery of a skill or any
+                particular learning outcome.
+            </p>
+
+            <h3>Changes to the Service</h3>
+            <p>
+                We may update, improve, suspend or discontinue features when
+                reasonably necessary. Where a material change affects an
+                active paid subscription, we will make reasonable efforts to
+                communicate it. Mandatory statutory rights remain unaffected.
+            </p>
+
+            <h3>Intellectual Property</h3>
+            <p>
+                The CLARITY name, branding, software, design and original
+                platform content are owned by or licensed to the operator.
+                You may use the platform for personal learning and productivity,
+                subject to these terms. You may not copy, resell, reverse
+                engineer or commercially exploit the platform except as
+                permitted by law or with written permission.
+            </p>
+
+            <h3>Account Suspension</h3>
+            <p>
+                We may restrict or suspend accounts involved in fraud, abuse,
+                security threats, unauthorized access or material violations
+                of these terms. Where appropriate, we will provide notice and
+                an opportunity to resolve the issue, subject to applicable law.
+            </p>
+
+            <h3>Applicable Law</h3>
+            <p>
+                These terms are governed by applicable laws of India.
+                Disputes will be handled by competent courts and authorities
+                with jurisdiction under applicable law.
+            </p>
+        </section>
+
+        <!-- SUBSCRIPTIONS -->
+
+        <section class="policy" id="subscription">
+            <h2>Subscription Plans & Pricing</h2>
+
+            <p>
+                CLARITY may offer free and paid subscription plans. Available
+                features, usage limits, prices and subscription periods are
+                displayed on the subscription or checkout page before purchase.
+            </p>
+
+            <h3>Available Plans</h3>
+            <ul>
+                <li><strong>Free:</strong> Access to the features and limits offered under the free plan.</li>
+                <li><strong>Pro:</strong> Paid access to the features and limits displayed at checkout.</li>
+                <li><strong>Premium:</strong> Paid access to eligible premium features and limits displayed at checkout.</li>
+            </ul>
+
+            <h3>Prices and Subscription Period</h3>
+            <p>
+                The price, billing period, taxes, included features and
+                applicable conditions shown at checkout before payment
+                determine the terms of your purchase. Please verify these
+                details before confirming your order.
+            </p>
+
+            <p>
+                Paid access applies for the period shown at purchase. When
+                that period ends, paid features may expire and the account
+                may revert to the free plan. Saved data and usage limits
+                are handled according to the applicable product rules.
+            </p>
+
+            <h3>Automatic Renewal</h3>
+            <p>
+                A subscription renews automatically only where recurring
+                billing is explicitly offered, clearly disclosed and
+                authorized by you. If recurring billing is not offered,
+                a new purchase may be required to continue paid access.
+                Applicable payment mandates and cancellation requirements
+                will be followed.
+            </p>
+
+            <h3>Feature Limits</h3>
+            <p>
+                Plans may have limits on roadmap generation, trackers or
+                custom features. These limits will be shown on the platform
+                and may apply for the relevant subscription period. Unlimited
+                usage is not included unless explicitly stated.
+            </p>
+        </section>
+
+        <!-- PAYMENTS -->
+
+        <section class="policy" id="payment">
+            <h2>Payments & Payment Security</h2>
+
+            <p>
+                Payments for eligible CLARITY subscriptions are processed
+                through Razorpay or another payment provider identified
+                at checkout. Supported payment methods depend on the
+                provider and the options available at the time of payment.
+            </p>
+
+            <h3>Order Confirmation</h3>
+            <p>
+                Paid access is granted after payment has been verified and
+                successfully processed by our system. A payment initiation
+                screen, pending transaction or unverified client-side
+                response does not itself confirm a successful purchase.
+            </p>
+
+            <h3>Pricing and Taxes</h3>
+            <p>
+                The payable amount and any applicable taxes will be shown
+                before you confirm payment. Please check the plan, price,
+                duration and conditions before completing your order.
+            </p>
+
+            <h3>Payment Information</h3>
+            <p>
+                Payment credentials are handled by the payment provider
+                according to its processes. CLARITY will not ask you to
+                send your card PIN, UPI PIN, OTP or banking password
+                through email or chat. Never disclose these credentials
+                to anyone claiming to be support.
+            </p>
+
+            <h3>Failed or Duplicate Transactions</h3>
+            <p>
+                If an amount is debited but your subscription is not
+                activated, contact support with your transaction reference
+                and registered account email. Duplicate charges and
+                failed-payment reversals will be investigated with the
+                payment provider and addressed according to applicable rules.
+            </p>
+
+            <h3>Fraud Prevention</h3>
+            <p>
+                We may verify transactions, reject suspicious payments,
+                investigate chargebacks and restrict access associated
+                with suspected payment fraud, subject to applicable law
+                and fair handling of genuine disputes.
+            </p>
+        </section>
+
+        <!-- REFUNDS -->
+
+        <section class="policy" id="refund">
+            <h2>Refund Policy</h2>
+
+            <p>
+                CLARITY provides digital subscriptions. Please review the
+                plan details, features, price and duration before purchasing.
+            </p>
+
+            <h3>When You May Request a Refund</h3>
+            <p>
+                Refund requests may be considered where a payment was
+                duplicated, a transaction was processed incorrectly,
+                paid access was not provided after a successfully verified
+                payment, or another circumstance warrants a refund under
+                applicable law or payment rules.
+            </p>
+
+            <h3>Change of Mind</h3>
+            <p>
+                Except where required by applicable law or expressly stated
+                at checkout, a change of mind, failure to use the service
+                or unused subscription time does not automatically entitle
+                a customer to a refund. This policy does not exclude any
+                non-waivable consumer rights.
+            </p>
+
+            <h3>How to Request a Refund</h3>
+            <ul>
+                <li>Email the support address listed in the Contact section.</li>
+                <li>Include your registered email, transaction reference, purchase date and reason.</li>
+                <li>Never send card PINs, UPI PINs, passwords or OTPs.</li>
+            </ul>
+
+            <h3>Refund Processing</h3>
+            <p>
+                We will review the request and communicate the outcome.
+                Approved refunds will be initiated through the relevant
+                payment channel where possible. The time taken for the
+                amount to appear in your account depends on the payment
+                provider and your bank.
+            </p>
+
+            <p>
+                Nothing in this policy removes a refund or remedy that
+                must be provided under applicable law.
+            </p>
+        </section>
+
+        <!-- CANCELLATION -->
+
+        <section class="policy" id="cancellation">
+            <h2>Subscription Cancellation Policy</h2>
+
+            <h3>Canceling a Subscription</h3>
+            <p>
+                Where a cancellation option is provided, you may cancel
+                through the account, subscription or payment-management
+                interface indicated by CLARITY. If no self-service option
+                is available, contact support for assistance.
+            </p>
+
+            <h3>Effect of Cancellation</h3>
+            <p>
+                Cancellation stops future renewals where recurring billing
+                applies, subject to the applicable payment mandate and
+                processing rules. Unless otherwise stated, cancellation
+                does not automatically provide a refund for a payment
+                already collected.
+            </p>
+
+            <p>
+                Where a paid subscription has been purchased for a fixed
+                term, access generally continues until the end of that
+                term unless the account is suspended, the law requires
+                a different outcome or the applicable offer states otherwise.
+            </p>
+
+            <h3>Payment Mandates</h3>
+            <p>
+                If a recurring-payment mandate has been authorized, follow
+                the cancellation process made available for that mandate.
+                We will follow applicable requirements for notice,
+                authorization and cancellation.
+            </p>
+        </section>
+
+        <!-- PRIVACY -->
+
+        <section class="policy" id="privacy">
+            <h2>Privacy Policy</h2>
+
+            <p>
+                This policy describes how CLARITY may collect, use, store
+                and protect information when you use the platform.
+            </p>
+
+            <h3>Information We May Collect</h3>
+            <ul>
+                <li>Account information, such as name, email address and authentication details.</li>
+                <li>Roadmaps, tracker entries, learning preferences and progress information you submit.</li>
+                <li>Subscription plan, payment status, transaction references and billing records.</li>
+                <li>Technical information, such as logs, device or browser details and security events, where collected.</li>
+                <li>Support messages and information you provide when requesting assistance.</li>
+            </ul>
+
+            <h3>How We Use Information</h3>
+            <ul>
+                <li>To create and manage accounts and authenticate sessions.</li>
+                <li>To generate roadmaps and maintain tracker progress.</li>
+                <li>To process and verify subscriptions and payments.</li>
+                <li>To prevent fraud, protect the platform and troubleshoot errors.</li>
+                <li>To respond to support requests and comply with legal obligations.</li>
+            </ul>
+
+            <h3>Payments</h3>
+            <p>
+                Payment processing may be performed by Razorpay or the
+                provider shown at checkout. The provider's privacy terms
+                also apply to information it processes. We may retain
+                transaction identifiers and payment status for account
+                management, reconciliation and legal obligations.
+            </p>
+
+            <h3>Storage and Security</h3>
+            <p>
+                We use reasonable technical and organizational safeguards
+                appropriate to protect personal information. No online
+                service can guarantee absolute security. Access to
+                information should be limited to authorized purposes.
+            </p>
+
+            <h3>Sharing Information</h3>
+            <p>
+                We may share relevant information with service providers
+                that help operate the platform, process payments, host
+                data, provide support or maintain security. We may also
+                disclose information when required by law or necessary
+                to address fraud, security incidents or legal claims.
+            </p>
+
+            <h3>Data Retention</h3>
+            <p>
+                We retain information for as long as reasonably necessary
+                to provide the service, maintain account records, resolve
+                disputes, prevent fraud and meet legal requirements.
+                Retention periods may differ by data type.
+            </p>
+
+            <h3>Your Privacy Rights</h3>
+            <p>
+                Subject to applicable law, you may request access to,
+                correction of or deletion of personal information, or
+                raise a privacy concern. Certain records may need to be
+                retained where legally required. Requests can be sent
+                to the contact address below.
+            </p>
+
+            <h3>Cookies and Similar Technologies</h3>
+            <p>
+                The platform may use cookies or browser storage for
+                authentication, preferences, security and core functionality.
+                You can manage browser storage through your browser settings,
+                although disabling necessary storage may affect service
+                functionality.
+            </p>
+
+            <h3>Policy Updates</h3>
+            <p>
+                We may update this policy to reflect changes to the
+                platform, applicable law or our practices. The latest
+                version will be posted on this page with its revision date.
+            </p>
+        </section>
+
+        <!-- DIGITAL DELIVERY -->
+
+        <section class="policy" id="delivery">
+            <h2>Digital Service Delivery Policy</h2>
+
+            <p>
+                CLARITY sells access to digital functionality. No physical
+                product is shipped, and no shipping fee or physical
+                delivery address is required for the digital subscription
+                itself.
+            </p>
+
+            <h3>Access to Purchased Features</h3>
+            <p>
+                After successful payment verification, eligible subscription
+                features are generally activated on the registered account.
+                You can then use the available features through the CLARITY
+                web application.
+            </p>
+
+            <h3>Activation Delays</h3>
+            <p>
+                Activation may occasionally be delayed because of payment
+                confirmation, technical errors or service interruptions.
+                If payment succeeds but access is not activated, contact
+                support with your transaction reference so we can investigate.
+            </p>
+
+            <h3>Availability</h3>
+            <p>
+                We aim to keep the platform accessible but do not guarantee
+                uninterrupted availability. Maintenance, outages, network
+                issues and circumstances beyond our reasonable control
+                may affect access.
+            </p>
+        </section>
+
+        <!-- ACCEPTABLE USE -->
+
+        <section class="policy" id="acceptable">
+            <h2>Acceptable Use & Account Security</h2>
+
+            <p>You agree not to:</p>
+
+            <ul>
+                <li>Attempt to access another user's account or private information.</li>
+                <li>Bypass subscription checks, feature limits or payment verification.</li>
+                <li>Exploit bugs or interfere with authentication and security controls.</li>
+                <li>Upload malicious content or abuse the platform's infrastructure.</li>
+                <li>Use automated methods to overload, scrape or disrupt the service.</li>
+                <li>Use CLARITY to violate applicable laws or third-party rights.</li>
+            </ul>
+
+            <p>
+                Report suspected security vulnerabilities or account
+                compromise through the contact details below. Please do
+                not exploit a vulnerability or access other users' data.
+            </p>
+        </section>
+
+        <!-- CONTACT -->
+
+        <section class="policy" id="contact">
+            <h2>Contact Information & Grievances</h2>
+
+            <p>
+                For subscription questions, payment issues, refund requests,
+                cancellation assistance, privacy requests or complaints,
+                contact CLARITY using the details below.
+            </p>
+
+            <h3>Service Operator</h3>
+
+            <p><strong>Business / Brand Name:</strong> CLARITY</p>
+
+            <!-- Add your accurate legal operator details if applicable. -->
+            <p><strong>Legal Operator:</strong> [Enter your legal name]</p>
+
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:YOUR_SUPPORT_EMAIL">YOUR_SUPPORT_EMAIL</a>
+            </p>
+
+            <p>
+                <strong>Business Address:</strong>
+                [Enter your accurate business or contact address]
+            </p>
+
+            <p>
+                <strong>Website:</strong>
+                <a href="https://clarity-e9p.pages.dev/">
+                    https://clarity-e9p.pages.dev/
+                </a>
+            </p>
+
+            <h3>Complaint Resolution</h3>
+            <p>
+                Please include your registered email address, a description
+                of the issue and relevant transaction references when
+                contacting support. Do not include passwords, PINs or OTPs.
+            </p>
+
+            <p>
+                We aim to acknowledge complaints within a reasonable period
+                and work toward resolution as promptly as possible. Where a
+                specific response or resolution timeline is required by
+                applicable law, we will follow that requirement.
+            </p>
+
+            <div class="notice">
+                Before publishing, replace all placeholder contact details
+                with accurate, working information. Ensure that your displayed
+                business identity, prices, renewal conditions, cancellation
+                process and refund terms match your actual service and
+                payment-provider requirements.
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<footer>
+    <p>© <span id="year"></span> CLARITY. All rights reserved.</p>
+    <p>Learning · Roadmaps · Progress Tracking</p>
+
+    <div class="footer-links">
+        <a href="#about">About</a>
+        <span>·</span>
+        <a href="#contact">Contact</a>
+        <span>·</span>
+        <a href="/index.html#">Careers</a>
+        <span>·</span>
+        <a href="/index.html#">Blog</a>
+    </div>
+
+    <div class="footer-links">
+        <a href="#terms">Terms</a>
+        <span>·</span>
+        <a href="#subscription">Subscriptions</a>
+        <span>·</span>
+        <a href="#privacy">Privacy</a>
+        <span>·</span>
+        <a href="#refund">Refunds</a>
+        <span>·</span>
+        <a href="#cancellation">Cancellation</a>
+    </div>
+</footer>
+
+<script>
+    // Current year in the footer
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+    // Highlight the current section in the navigation
+    const navLinks = document.querySelectorAll(
+        'nav a[href^="#"]'
+    );
+
+    const sections = document.querySelectorAll(
+        "main section[id]"
+    );
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            const isActive =
+                                link.getAttribute("href") ===
+                                "#" + entry.target.id;
+
+                            link.classList.toggle("active", isActive);
+
+                            if (isActive) {
+                                link.setAttribute("aria-current", "location");
+                            } else {
+                                link.removeAttribute("aria-current");
+                            }
+                        });
+                    }
+                });
+            },
+            {
+                rootMargin: "-15% 0px -70% 0px",
+                threshold: 0
+            }
+        );
+
+        sections.forEach(section => observer.observe(section));
+    }
+
+    // Close to the selected section by using native anchor navigation.
+    // No external JavaScript libraries are required.
+</script>
+
+</body>
+</html>
+

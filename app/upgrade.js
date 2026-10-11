@@ -1,83 +1,19 @@
-// async function buyPlan(plan){
-//      const sessionId= sessionStorage.getItem("sessionId");
-//    const Customer = JSON.parse(localStorage.getItem("clarity_state_v1"));
-//      console.log("buyPlan called with plan:", plan, "and email:", Customer.currentUser);
-//     const response =
-//         await fetch(
-//             API.createPaymentOrder(),
-//             {
-//                 method:"POST",
-//                 headers:{
-//                     "Content-Type":
-//                         "application/json"
-//                 },
-//                 body:JSON.stringify({
-//                     email:Customer.currentUser,
-//                     plan:"PRO",
-//                     sessionID:sessionId
-//                 })
-//             });
+export async function onRequest(context) {
+    return Response.json({
+        razorpayKeyId: context.env.RAZORPAY_KEY_ID
+    });
+}
 
-//     const order =
-//         await response.json();
-// const sessionIds = sessionStorage.getItem("sessionId");
-//     const options = {
+async function getRazorpayKey() {
+    const response = await fetch("/config");
 
-//         key:"rzp_test_Td04r8T5FdCMGv",
+    if (!response.ok) {
+        throw new Error("Failed to load Razorpay Key ID");
+    }
 
-//         amount:order.amount,
-
-//         currency:"INR",
-
-//         name:"CLARITY",
-
-//         description:
-//             plan + " Subscription",
-
-//         order_id:order.id,
-
-//         handler:
-//             async function(response){
-
-//                 await fetch(
-//                     API.verifyPayment(),
-//                     {
-//                         method:"POST",
-
-//                         headers:{
-//                             "Content-Type":
-//                                 "application/json"
-//                         },
-
-//                         body:JSON.stringify({
-
-//                             razorpayOrderId:
-//                             response.razorpay_order_id,
-
-//                             razorpayPaymentId:
-//                             response.razorpay_payment_id,
-
-//                             razorpaySignature:
-//                             response.razorpay_signature,
-
-//                             email:Customer.currentUser,
-
-//                             plan:"PREMIUM",
-//                             sessionID:sessionIds
-//                         })
-//                     });
-
-//                 alert(
-//                     "Subscription Activated");
-//                     window.location.href = "/app/profile.html";
-//             }
-//     };
-
-//     const rzp =
-//         new Razorpay(options);
-
-//     rzp.open();
-// }
+    const config = await response.json();
+    return config.razorpayKeyId;
+}
 
 async function buyPlan(plan) {
 
@@ -256,11 +192,21 @@ async function buyPlan(plan) {
         // ==========================================
         // RAZORPAY OPTIONS
         // ==========================================
+async function getRazorpayKey() {
+    const response = await fetch("/config");
 
+    if (!response.ok) {
+        throw new Error("Failed to load Razorpay Key ID");
+    }
+
+    const config = await response.json();
+    return config.razorpayKeyId;
+}
+
+const razorpayKeyId = await getRazorpayKey();
         const options = {
 
-            key:"rzp_test_Td04r8T5FdCMGv",
-                
+            key: razorpayKeyId,
 
             amount:
                 order.amount,

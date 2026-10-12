@@ -230,7 +230,7 @@ console.log("CAPTCHA token received:", Boolean(recaptchaToken));
     const s = store.load();
 
     s.currentUser = data.email;
-    sessionStorage.setItem('sessionId', data.sessionID);
+    localStorage.setItem('sessionId', data.sessionID);
 
     s.users[data.email] = {
         id: data.id,

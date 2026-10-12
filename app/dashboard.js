@@ -7,7 +7,7 @@ import {
 } from "./shared/store.js";
 
 
-import { checkSessionOnPageLoad } from "./shared.js";
+import { checkSessionOnPageLoad } from "./shared/store.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     checkSessionOnPageLoad();

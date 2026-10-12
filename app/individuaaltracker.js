@@ -12,7 +12,7 @@ if (!tracker) {
     throw new Error("Tracker not found");
 }
 
-console.log("Tracker:", tracker);
+
 
 // ======================
 // PARSE ROADMAP
@@ -24,7 +24,7 @@ while (typeof roadmapData === "string") {
     roadmapData = JSON.parse(roadmapData);
 }
 
-console.log("Roadmap Data:", roadmapData);
+
 
 const savedProgress =
     JSON.parse(
@@ -99,7 +99,7 @@ const r = {
 
 };
 
-console.log("Final Roadmap:", r);
+
 
 // ======================
 // HEADER
@@ -286,7 +286,7 @@ function renderProgress() {
         status
     };
 
-    console.log("CustomRoadmap Progress:", progressData);
+  
 
     // Percentage
     const percentageElement =
@@ -1699,12 +1699,7 @@ function renderChecklist() {
             total
         );
 
-    console.log(
-        "CustomRoadmap Checklist:",
-        completedCount,
-        "/",
-        total
-    );
+   
 
     checklist.innerHTML =
         r.nodes.map((node, index) => {
@@ -1859,7 +1854,7 @@ function getGeneratedRoadmap() {
 
 function getCustomRoadmapData() {
 
-    console.log("Tracker Data:", tracker);
+  
 
     let roadmap = tracker.jsonData;
 
@@ -1872,7 +1867,7 @@ function getCustomRoadmapData() {
         }
     }
 
-    console.log("Custom Roadmap Data:", roadmap);
+   
 
     return roadmap;
 }
@@ -3995,7 +3990,7 @@ const cards =
         document.getElementById(
             "radarChart"
         );
-       console.log("hello",cards);
+      
      
     if (radarCtx) {
 
@@ -4151,8 +4146,7 @@ function renderGeneratedProgress() {
 
     const roadmap =
         getGeneratedRoadmap();
-    console.log("Roadmap generated vibhav:", roadmap);
-    console.log("Tracker generated vibhav:", tracker);
+   
     const nodes =
         roadmap.nodes || [];
 
@@ -4266,9 +4260,7 @@ function renderGeneratedProgress() {
         document.getElementById(
             "stats"
         );
-console.log(done)
-console.log(remaining)
-console.log(total)
+
     if (stats) {
 
         stats.innerHTML = `
@@ -4618,12 +4610,12 @@ if (trackerInfo) {
 // ======================
 
 function renderAll() {
-  console.log("vibhav",tracker);
+ 
 
 
   const type=tracker.type;
   if(type==="Generated"){
-console.log("select is Generated Roadmap")
+
    renderGeneratedChecklist()
    renderGeneratedProgress()
   
@@ -4631,7 +4623,7 @@ console.log("select is Generated Roadmap")
    
 
   }else if(type==="CustomTracker"){
-    console.log("select is Custom  Roadmap")
+    
    renderCustomTrackerProgress();
 
     renderCustomTrackerChecklist();
@@ -4639,7 +4631,7 @@ console.log("select is Generated Roadmap")
     renderCustomTrackerCharts();
   }
   else{
-    console.log("select is Custom Roadmap")
+
     renderProgress();
 renderCharts();     
     renderChecklist();
@@ -4807,13 +4799,9 @@ saveBtn.addEventListener("click", async () => {
         completedSteps = tracker.completedSteps;
         remainingSteps = tracker.remainingSteps;
 
-        console.log(
-            "Tracker type is Generated Roadmap, proceeding to save."
-        );
+      
 
-        console.log("totalSteps:", totalSteps);
-        console.log("completedSteps:", completedSteps);
-        console.log("remainingSteps:", remainingSteps);
+    
     }
 
     // ================================
@@ -4889,8 +4877,7 @@ saveBtn.addEventListener("click", async () => {
 
 else if (tracker.type === "CustomRoadmap") {
 
-    console.log("Tracker type is CustomRoadmap, proceeding to save.");
-
+   
     data = getCustomRoadmapData();
 
     if (!data || !Array.isArray(data.nodes)) {
@@ -4978,36 +4965,7 @@ else if (tracker.type === "CustomRoadmap") {
         JSON.stringify(tracker)
     );
 
-    console.log(
-        "Custom Roadmap Data:",
-        data
-    );
-
-    console.log(
-        "totalSteps:",
-        totalSteps
-    );
-
-    console.log(
-        "completedSteps:",
-        completedSteps
-    );
-
-    console.log(
-        "remainingSteps:",
-        remainingSteps
-    );
-
-    console.log(
-        "completedpercentage:",
-        tracker.completedpercentage
-    );
-
-    console.log(
-        "status:",
-        tracker.status
-    );
-
+   
 }
 
     // ================================
@@ -5021,13 +4979,7 @@ else if (tracker.type === "CustomRoadmap") {
         completedSteps = tracker.completedSteps;
         remainingSteps = tracker.remainingSteps;
 
-        console.log(
-            "Tracker type is CustomTracker, proceeding to save."
-        );
-
-        console.log("totalSteps:", totalSteps);
-        console.log("completedSteps:", completedSteps);
-        console.log("remainingSteps:", remainingSteps);
+       
     }
 
     // ================================
@@ -5068,8 +5020,7 @@ else if (tracker.type === "CustomRoadmap") {
         email: tracker.userEmail
     };
 
-    console.log("trackerPayload:", trackerPayload);
-  console.log("finaltrackerPayload:", finaltrackerPayload);
+ 
     // ================================
     // SAVE TO BACKEND
     // ================================

@@ -187,8 +187,7 @@ try {
     // Read the completed v2 checkbox token.
      const recaptchaToken = await getRecaptchaToken();
 
-console.log("CAPTCHA token type:", typeof recaptchaToken);
-console.log("CAPTCHA token received:", Boolean(recaptchaToken));
+
 
     const loginData = {
         email,
@@ -241,7 +240,7 @@ console.log("CAPTCHA token received:", Boolean(recaptchaToken));
 
     store.save(s);
 
-    console.log('Login successful.');
+   
     window.location.href = 'dashboard.html';
 
 } catch (error) {

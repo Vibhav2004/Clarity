@@ -13,7 +13,7 @@ if (!user) throw new Error("redir");
 async function render() {
 
   try {
-  console.log("Fetching profile for user:", user.email);
+
     // const response = await fetch(
     //   API.profile(user.email)
     // );
@@ -37,7 +37,7 @@ const response = await fetch(
     }
 
     const u = await response.json();
-   console.log(u);
+
     document.getElementById("content").innerHTML = `
       <div class="card slide-up" style="display:flex; gap:20px; align-items:center; flex-wrap:wrap">
 
@@ -264,11 +264,10 @@ document.addEventListener("click", function (event) {
 
     event.preventDefault();
  
-    console.log("Username Edit button clicked");
+
      const field = editButton.closest(".field");
     const username = field.querySelector("p").textContent.trim();
 
-    console.log("Username:", username);
 });
 
 document.addEventListener("click", function (event) {
@@ -279,11 +278,11 @@ document.addEventListener("click", function (event) {
 
     event.preventDefault();
 
-    console.log("Email Edit button clicked");
+    
      const field = editButton.closest(".field");
     const email = field.querySelector("p").textContent.trim();
 
-    console.log("Email:", email);
+  
 });
 
 
@@ -296,7 +295,7 @@ document.addEventListener("click", function (event) {
     event.preventDefault();
    const email =user.email;
    
-    console.log("Password Edit button clicked");
+   
      const field = editButton.closest(".field");
     const password = field.querySelector("p").textContent.trim();
 
@@ -359,10 +358,10 @@ async function OtpVerification(email) {
 }
 document.addEventListener("click", async function (event) {
    const email = user.email;
-   console.log("Email for account deletion:", email);
+  
     const deleteButton =
         event.target.closest("#deleteAccount");
- console.log("Delete Account button clicked");
+
     if (!deleteButton) return;
 
     event.preventDefault();

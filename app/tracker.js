@@ -72,7 +72,7 @@ const response = await fetch(
     </div>
       <div class="roadmap-grid">
        ${trackers.map(tracker => {
-  console.log("Rendering tracker:", tracker);
+
   const total = tracker.totalSteps || 0;
   const completed = tracker.completedSteps || 0;
  const pct =
@@ -206,10 +206,7 @@ const statusClass =
                 t => t.roadmapName === roadmapName
             );
 
-        console.log(
-            "Selected Tracker:",
-            selectedTracker
-        );
+       
 
         if (!selectedTracker) {
             console.error(

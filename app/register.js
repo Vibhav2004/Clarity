@@ -160,8 +160,7 @@ try {
     // Read the completed v2 checkbox token.
   const recaptchaToken = await getRecaptchaToken();
 
-console.log("CAPTCHA token type:", typeof recaptchaToken);
-console.log("CAPTCHA token received:", Boolean(recaptchaToken));
+
 
     const userData = {
         userName: username,
@@ -193,7 +192,7 @@ console.log("CAPTCHA token received:", Boolean(recaptchaToken));
 
     await response.json();
 
-    console.log('Registration successful.');
+   
     toast('Registration Successful!');
     window.location.href = 'login.html';
 

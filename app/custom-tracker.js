@@ -66,13 +66,13 @@
 });
   }
   function renderSteps() {
-    console.log("Rendering Steps");
+    
 
     
 
    
     const list = document.getElementById("steps");
-     console.log(list);
+
     if (!active) {
       list.innerHTML = `<div class="card empty-state"><h3 data-i18n="customTracker.noTrackerYet">No tracker yet</h3><p data-i18n="customTracker.createBegin">Create one above to begin.</p></div>`;
       return;
@@ -157,10 +157,7 @@ document
 
             if (!result) return;
 
-            console.log(
-                "Saved:",
-                result
-            );
+           
         }
     );
 

@@ -51,7 +51,7 @@ saveButton.addEventListener("click", async function (event) {
 
         alert("Password updated successfully");
        window.location.href = "profile.html";
-        console.log(result);
+        
 
     } catch (error) {
 

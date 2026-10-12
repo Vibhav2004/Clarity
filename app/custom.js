@@ -3,7 +3,7 @@ const user = renderShell("custom");
 let pendingNodePosition = null;
 if (!user) throw new Error("redir");
 async function saveRoadmapToBackend() {
-console.log(user);
+
 
  const roadmapData = {
   name:
@@ -116,7 +116,7 @@ console.log(user);
       "Roadmap saved successfully!"
     );
 
-    console.log(result);
+    
 
   } catch (error) {
 

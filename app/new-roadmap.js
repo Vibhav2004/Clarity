@@ -70,7 +70,7 @@ const QUESTIONS = [
 async function fetchCategories() {
   // const res = await fetch(API.roadmapCategories());
   const sessionId = localStorage.getItem("sessionId");
-console.log("Session ID for fetching categories:", sessionId);
+
 const res = await fetch(
     API.roadmapCategories(),
     {
@@ -354,7 +354,7 @@ async function showReview() {
 
   </div>
 `;
-console.log(answers);
+
 localStorage.setItem("latestRoadmap", JSON.stringify(answers));
 
 

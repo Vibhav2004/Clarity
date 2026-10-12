@@ -24,7 +24,7 @@ function toggleTrackerButton() {
       "roadmapSource"
     );
 
-  console.log("Source:", source);
+ 
 
   const tracker =
     document.getElementById(
@@ -104,8 +104,7 @@ function getRoadmapData() {
             )
         );
 
-    console.log("Selected Key:", cacheKey);
-    console.log("Cache:", roadmapCache);
+   
 
     if (!cacheKey) {
         throw new Error(
@@ -277,7 +276,7 @@ const payload = {
     email: user.email,
     sessionID: sessionId
 };
-console.log(payload)
+
 const res = await fetch(
     API.saveTracker(),
     {
@@ -708,7 +707,7 @@ async function fetchRoadmap() {
   // const roadmapInfo =
   //   JSON.parse(localStorage.getItem("latestRoadmap"));
     if (isFetching) {
-    console.log("Already fetching");
+    
     return;
   }
 
@@ -795,10 +794,7 @@ const res = await fetch(url, {
       JSON.stringify(roadmapCache)
     );
 
-    console.log(
-      "Saved roadmap:",
-      cacheKey
-    );
+ 
     stopLoading();
     renderCanvas();
 
@@ -940,12 +936,12 @@ let roadmapInfo;
 function renderCanvas() {
 
   if (!roadmapData) return;
-  console.log("This is the extracted Data"+roadmapData);
+ 
   const nodes = roadmapData.nodes;
  roadmapInfo =
   JSON.parse(localStorage.getItem("latestRoadmap"));
 
-console.log(roadmapInfo);
+
 
    document.getElementById("title")
       .textContent = `${roadmapInfo.custom_name}`;
@@ -1436,10 +1432,7 @@ const level =
     .toLowerCase()
     .trim();
 
-console.log(
-  "Difficulty:",
-  level
-);
+
 
 const roadmap =
   roadmapData[0]?.[level];
@@ -1738,9 +1731,7 @@ const roadmap =
 
   }
 
-  console.log(
-    `Rendered ${nodes.length} ${level} roadmap steps`
-  );
+ 
 }
  
 
@@ -1758,15 +1749,9 @@ async function initializeRoadmap() {
       )
     ) || {};
 
-  console.log(
-    "Selected Key:",
-    selectedKey
-  );
 
-  console.log(
-    "Cache:",
-    roadmapCache
-  );
+
+
 
   if (
     selectedKey &&
@@ -1776,10 +1761,7 @@ async function initializeRoadmap() {
     const roadmap =
       roadmapCache[selectedKey];
 
-    console.log(
-      "Loading roadmap from cache:",
-      roadmap
-    );
+   
 
     roadmapData =
       roadmap.data;
@@ -1802,9 +1784,7 @@ async function initializeRoadmap() {
       "CustomRoadmap"
     ) {
 
-      console.log(
-        "Custom roadmap detected"
-      );
+   
 
       renderCustomRoadmap(
         roadmap.data
@@ -1819,9 +1799,7 @@ async function initializeRoadmap() {
     return;
   }
 
-  console.log(
-    "No cached roadmap found. Fetching..."
-  );
+
 
   await fetchRoadmap();
 }

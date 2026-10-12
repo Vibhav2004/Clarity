@@ -29,7 +29,7 @@ verifyButton.addEventListener("click", async function (event) {
 
      const result = await response.text();
 
-        console.log("Verify response:", result);
+      
 
         if (!response.ok) {
             throw new Error("OTP verification failed");

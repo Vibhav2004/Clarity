@@ -99,10 +99,7 @@ async function buyPlan(plan) {
         }
 
 
-        console.log(
-            "Starting payment:",
-            plan
-        );
+      
 
 
         // ==========================================

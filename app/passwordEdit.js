@@ -18,7 +18,7 @@ saveButton.addEventListener("click", async function (event) {
     }
 
     const email = sessionStorage.getItem("otp_email");
-    const sessionId = sessionStorage.getItem("sessionId");
+    const sessionId = localStorage.getItem("sessionId");
 
     try {
 

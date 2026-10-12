@@ -744,8 +744,8 @@ async function checkPlanStatus(email) {
     // const response = await fetch(
     //   API.plan(email)
     // );
-    // const sessionId = sessionStorage.getItem("sessionId");
- const sessionId = sessionStorage.getItem("sessionId");
+     const sessionId = sessionStorage.getItem("sessionId");
+
 const response = await fetch(
     API.plan(),
     {

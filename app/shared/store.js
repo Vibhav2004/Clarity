@@ -94,7 +94,7 @@ export function logout() {
         },
         body: JSON.stringify({
             email: email,
-            sessionID: sessionStorage.getItem("sessionId") // Include sessionId if needed
+            sessionID: localStorage.getItem("sessionId") // Include sessionId if needed
         })
     })
     .then(response => {
@@ -110,7 +110,7 @@ export function logout() {
         console.log("Logout successful:", data);
 
         localStorage.clear();
-       sessionStorage.clear();
+       localStorage.clear();
         window.location.href = "/app/login.html";
     })
     .catch(error => {
@@ -744,7 +744,7 @@ async function checkPlanStatus(email) {
     // const response = await fetch(
     //   API.plan(email)
     // );
-     const sessionId = sessionStorage.getItem("sessionId");
+     const sessionId = localStorage.getItem("sessionId");
 
 const response = await fetch(
     API.plan(),

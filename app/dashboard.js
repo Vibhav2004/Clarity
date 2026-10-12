@@ -10,6 +10,7 @@ import {
 import { checkSessionOnPageLoad } from "./shared/store.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOMContentLoaded event fired. Checking session...");
     checkSessionOnPageLoad();
 });
 

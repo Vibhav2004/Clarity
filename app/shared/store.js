@@ -5,41 +5,60 @@ const STORAGE_KEY = "clarity_state_v1";
 
 
 export async function checkSessionOnPageLoad() {
-    const sessionId = localStorage.getItem("sessionId");
+const sessionId = localStorage.getItem("sessionId");
 
-    // Check if session ID is missing or empty
-    if (!sessionId || sessionId.trim() === "") {
-        console.warn("Session ID is missing. Logging out...");
 
+// Check whether the session ID is missing or empty.
+if (!sessionId || sessionId.trim() === "") {
+    console.warn("Session ID is missing. Logging out...");
+
+    // Safely retrieve the user's email if available.
+    let email = null;
+
+    try {
         const state = store.load();
-        const email = state.currentUser?.email;
-
-        try {
-            if (email) {
-                await fetch(
-                    "https://claritybackend.onrender.com/LogOut-User",
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            email: email,
-                            sessionID: sessionId
-                        })
-                    }
-                );
-            }
-        } catch (error) {
-            console.error("Logout endpoint error:", error);
-        } finally {
-            localStorage.clear();
-            sessionStorage.clear();
-
-            window.location.replace("/app/login.html");
-        }
+        email = state?.currentUser?.email || null;
+    } catch (error) {
+        console.error("Unable to retrieve stored user:", error);
     }
+
+    try {
+        // Attempt backend logout only when an email is available.
+        if (email) {
+            const response = await fetch(
+                "https://claritybackend.onrender.com/LogOut-User",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        sessionID: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    })
+                }
+            );
+
+            if (!response.ok) {
+                console.error(
+                    "Backend logout failed:",
+                    response.status
+                );
+            } else {
+              localStorage.clear();
+              sessionStorage.clear();
+              window.location.href = "/app/login.html";
+                console.log("Backend logout response received.");
+            }
+        }
+    } catch (error) {
+        console.error("Logout endpoint error:", error);
+    } 
 }
+
+
+}
+
 
 
 const defaults = () => ({

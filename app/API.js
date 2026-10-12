@@ -86,9 +86,9 @@ function friendlyApiError(status, responseText = "") {
   if (/PREMIUM_REQUIRED|PLAN_REQUIRED|UPGRADE_REQUIRED/.test(code)) return { title: "Plan Upgrade Required", message: "This feature is not included in your current plan.", type: "warning" };
   if (/INVALID_OTP|OTP_INVALID|OTP_EXPIRED|INVALID OR EXPIRED OTP/.test(code)) return { title: "OTP Could Not Be Verified", message: "The code is incorrect or has expired. Request a new code and try again.", type: "error" };
   if (/INVALID_CREDENTIALS|BAD_CREDENTIALS|INCORRECT_PASSWORD|INVALID EMAIL OR PASSWORD/.test(code)) return { title: "Sign-In Details Not Recognized", message: "Check your email and password, then try again.", type: "error" };
-  if (/SESSION_EXPIRED|INVALID_SESSION|UNAUTHORIZED/.test(code)) return { title: "Session Expired", message: "Please sign in again to continue.", type: "warning" };
+  if (/SESSION_EXPIRED|INVALID_SESSION|UNAUTHORIZED/.test(code)) return { title: "Session Expired", message: "Please log-out and  sign in again to continue.", type: "warning" };
   if (status === 400) return { title: "Check Your Request", message: "Some information is missing or invalid. Review the form and try again.", type: "warning" };
-  if (status === 401) return { title: "Sign-In Required", message: "Your session may have expired. Sign in again to continue.", type: "warning" };
+  if (status === 401) return { title: "Log-out Required", message: "Your session may have expired. Sign in again to continue.", type: "warning" };
   if (status === 4088) return { title: "Access Not Available", message: "You do not have permission to use this feature, or your plan may need an upgrade.", type: "warning", actionLabel: "View Plans", onAction: () => { window.location.href = "/app/upgrade.html"; } };
   if (status === 404) return { title: "Item Not Found", message: "The requested information could not be found. Refresh and try again.", type: "warning" };
   if (status === 409) return { title: "Request Conflict", message: "This change conflicts with an existing record. Review your current items and try again.", type: "warning" };

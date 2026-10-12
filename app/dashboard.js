@@ -6,6 +6,16 @@ import {
   applyLanguage
 } from "./shared/store.js";
 
+
+import { checkSessionOnPageLoad } from "./shared.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+    checkSessionOnPageLoad();
+});
+
+
+
+
 const user = renderShell("dashboard");
 if (!user) throw new Error("redir");
 

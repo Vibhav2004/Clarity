@@ -3,6 +3,45 @@
 
 const STORAGE_KEY = "clarity_state_v1";
 
+
+export async function checkSessionOnPageLoad() {
+    const sessionId = localStorage.getItem("sessionId");
+
+    // Check if session ID is missing or empty
+    if (!sessionId || sessionId.trim() === "") {
+        console.warn("Session ID is missing. Logging out...");
+
+        const state = store.load();
+        const email = state.currentUser?.email;
+
+        try {
+            if (email) {
+                await fetch(
+                    "https://claritybackend.onrender.com/LogOut-User",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            email: email,
+                            sessionID: sessionId
+                        })
+                    }
+                );
+            }
+        } catch (error) {
+            console.error("Logout endpoint error:", error);
+        } finally {
+            localStorage.clear();
+            sessionStorage.clear();
+
+            window.location.replace("/app/login.html");
+        }
+    }
+}
+
+
 const defaults = () => ({
   currentUser: null,
   users: {},

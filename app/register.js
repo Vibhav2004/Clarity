@@ -195,7 +195,7 @@ console.log("CAPTCHA token received:", Boolean(recaptchaToken));
 
     console.log('Registration successful.');
     toast('Registration Successful!');
-    window.location.href = 'dashboard.html';
+    window.location.href = 'login.html';
 
 } catch (error) {
     console.error('Registration error:', error);

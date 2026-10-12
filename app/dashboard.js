@@ -28,7 +28,7 @@ async function loadRoadmaps() {
     // const res = await fetch(
     //   API.allRoadmaps(user.email)
     // );
-    const sessionId = localStorage.getItem("sessionId");
+    const sessionId = sessionStorage.getItem("sessionId");
 
 const res = await fetch(
     API.allRoadmaps(user.email),

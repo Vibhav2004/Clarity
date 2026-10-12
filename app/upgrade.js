@@ -20,7 +20,7 @@ async function buyPlan(plan) {
         // ==========================================
 
         const sessionId =
-            localStorage.getItem("sessionId");
+            sessionStorage.getItem("sessionId");
 
 
         // ==========================================
@@ -282,21 +282,13 @@ const razorpayKeyId = await getRazorpayKey();
                         let verificationRejected = !result.trim();
                         try {
                             const parsedResult = JSON.parse(result);
-                            const responseState = [
-                                parsedResult.status,
-                                parsedResult.code,
-                                parsedResult.message,
-                                parsedResult.error
-                            ].filter(Boolean).join(" ");
                             verificationRejected = verificationRejected ||
                                 parsedResult.success === false ||
                                 parsedResult.verified === false ||
-                                parsedResult.status === false ||
-                                parsedResult.ok === false ||
-                                /(?:PAYMENT.*(?:FAIL|REJECT|INVALID|NOT VERIFIED)|\b(?:FAILED|ERROR|INVALID|NOT_VERIFIED|REJECTED)\b)/i.test(responseState);
+                                parsedResult.status === false;
                         } catch {
                             verificationRejected = verificationRejected ||
-                                /(?:PAYMENT.*(?:FAIL|REJECT|INVALID|NOT VERIFIED)|\b(?:FAILED|ERROR|INVALID|NOT_VERIFIED|REJECTED)\b)/i.test(result.trim());
+                                /^(?:FAILED|ERROR|INVALID|NOT_VERIFIED|PAYMENT_VERIFICATION_FAILED)\b/i.test(result.trim());
                         }
 
                         if (verificationRejected) {

@@ -95,7 +95,7 @@ console.log(user);
   try {
 
     const response =
-      await fetch(API.customRoadmap(), {
+      fetch(API.customRoadmap(), {
   method: "POST",
   headers: {
     "Content-Type": "application/json"

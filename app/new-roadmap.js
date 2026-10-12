@@ -69,7 +69,7 @@ const QUESTIONS = [
 ========================= */
 async function fetchCategories() {
   // const res = await fetch(API.roadmapCategories());
-  const sessionId = sessionStorage.getItem("sessionId");
+  const sessionId = localStorage.getItem("sessionId");
 console.log("Session ID for fetching categories:", sessionId);
 const res = await fetch(
     API.roadmapCategories(),
@@ -92,7 +92,8 @@ const res = await fetch(
 }
 
 async function fetchNames(category) {
-  const sessionId = sessionStorage.getItem("sessionId");
+  const sessionId = localStorage
+     .getItem("sessionId");
 
 const res = await fetch(
     API.roadmapsInCategory(category),

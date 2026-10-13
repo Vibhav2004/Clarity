@@ -96,16 +96,7 @@
   margin: 0;
   padding: 0;
 }
-/* html,body { min-height: 100%; }
-body {
-  font-family: 'Inter', system-ui, -apple-system, 'SF Pro Display', sans-serif;
-  background: var(--bg);
-  background-image: var(--gradient-page);
-  background-attachment: fixed;
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
-} */
+
 html {
   scroll-behavior: smooth;
   min-height: 100%;
@@ -258,12 +249,7 @@ select {
   );
 
   mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
-  /* background-image:
-    linear-gradient(rgba(200,169,107,.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200,169,107,.05) 1px, transparent 1px);
-  background-size: 60px 60px;
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000, transparent 80%);
-          mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000, transparent 80%); */
+  
 }
 .aurora {
   position: absolute;
@@ -546,8 +532,7 @@ select {
   box-shadow: 0 0 10px var(--gold);
 }
 /* Cards */
-/* .card { background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-elegant); position: relative; } */
+
 .card {
   background: rgba(0, 0, 0, 0.155);
 
@@ -577,7 +562,7 @@ select {
 .card-hover:hover {
   transform: translateY(-4px);
   border-color: var(--border-strong);
-  /* box-shadow: var(--shadow-glow), var(--shadow-elegant); */
+
 }
 
 /* Badges */

@@ -73,11 +73,7 @@ export function requireAuth() {
 export function redirectIfAuthed() {
   if (store.current()) window.location.href = "/app/dashboard.html";
 }
-// export function logout() {
-//   localStorage.clear();
 
-//   window.location.href = "/app/login.html";
-// }
 
 export function logout() {
            const state = store.load();

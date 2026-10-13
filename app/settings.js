@@ -17,6 +17,14 @@ async function render() {
         <div><div class="label" data-i18n="settings.weeklyDigest">Weekly email digest</div><div class="sub" data-i18n="settings.weeklyDigestSub">A short recap of your progress every Monday.</div></div>
         <div class="toggle ${set.emailUpdates ? "on" : ""}" data-key="emailUpdates"></div>
       </div>
+         <div class="row">
+        <div><div class="label" data-i18n="settings.weeklyDigest">Weekly email digest</div><div class="sub" data-i18n="settings.weeklyDigestSub">A short recap of your progress every Monday.</div></div>
+        <div class="toggle ${set.emailUpdates ? "on" : ""}" data-key="emailUpdates"></div>
+      </div>
+         <div class="row">
+        <div><div class="label" data-i18n="settings.weeklyDigest">Weekly email digest</div><div class="sub" data-i18n="settings.weeklyDigestSub">A short recap of your progress every Monday.</div></div>
+        <div class="toggle ${set.emailUpdates ? "on" : ""}" data-key="emailUpdates"></div>
+      </div>
       <div class="row">
         <div><div class="label" data-i18n="settings.theme">Theme</div><div class="sub">${await t("settings.themeCurrent", { theme: set.theme })}</div></div>
         <button class="btn btn-ghost btn-sm" id="themeBtn" data-i18n="settings.toggleTheme">Toggle theme</button>

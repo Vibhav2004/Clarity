@@ -23,24 +23,7 @@ async function render() {
 
 
 
-<div class="row">
-    <div>
-        <div class="label">Show Your Support</div>
-        <div class="sub">
-            Support CLARITY and help us maintain our servers.
-        </div>
-    </div>
 
-    <div id="razorpay-donation-container">
-        <form>
-            <script
-                src="https://checkout.razorpay.com/v1/payment-button.js"
-                data-payment_button_id="pl_TmbzjFfasSvKgh"
-                async>
-            </script>
-        </form>
-    </div>
-</div>
 
 
 

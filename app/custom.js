@@ -43,21 +43,7 @@ async function saveRoadmapToBackend() {
 
     "nodes": state.nodes.map(
       (node, index) => ({
-        // "node_id": node.id,
-        // "step_no": index + 1,
-        // "step_name":
-        //   node.title || "Untitled Node",
-
-        // "description":
-        //   node.description || "",
-
-        // "color": node.color,
-        // "shape": node.shape,
-
-        // "position": {
-        //   "x": node.x,
-        //   "y": node.y
-        // }
+       
         
   node_id: node.id,
   step_no: index + 1,
@@ -148,14 +134,7 @@ const COLORS = [
   "#8FA8FF", // Periwinkle
   "#C8B6A6", // Champagne Beige
 ];
-// let state = {
-//   nodes: [],
-//   edges: [],
-//   tool: "select",
-//   color: COLORS[0],
-//   selectedId: null,
-//   pendingFrom: null,
-// };
+
 let state = {
   nodes: [],
   edges: [],

@@ -4,60 +4,7 @@
 const STORAGE_KEY = "clarity_state_v1";
 
 
-// export async function checkSessionOnPageLoad() {
-// const sessionId = localStorage.getItem("sessionId");
 
-
-// // Check whether the session ID is missing or empty.
-// if (!sessionId || sessionId.trim() === "") {
-//     console.warn("Session ID is missing. Logging out...");
-
-//     // Safely retrieve the user's email if available.
-//     let email = null;
-
-//     try {
-//         const state = store.load();
-//         email = state?.currentUser?.email || null;
-//     } catch (error) {
-//         console.error("Unable to retrieve stored user:", error);
-//     }
-
-//     try {
-//         // Attempt backend logout only when an email is available.
-//         if (email) {
-//             const response = await fetch(
-//                 "https://claritybackend.onrender.com/LogOut-User",
-//                 {
-//                     method: "POST",
-//                     headers: {
-//                         "Content-Type": "application/json"
-//                     },
-//                     body: JSON.stringify({
-//                         email: email,
-//                         sessionID: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-//                     })
-//                 }
-//             );
-
-//             if (!response.ok) {
-//                 console.error(
-//                     "Backend logout failed:",
-//                     response.status
-//                 );
-//             } else {
-//               localStorage.clear();
-//               sessionStorage.clear();
-//               window.location.href = "/app/login.html";
-//                 console.log("Backend logout response received.");
-//             }
-//         }
-//     } catch (error) {
-//         console.error("Logout endpoint error:", error);
-//     } 
-// }
-
-
-// }
 
 
 
@@ -136,14 +83,6 @@ export function logout() {
            const state = store.load();
     const email = state.currentUser;
 
-    console.log("Logout email:", email);
-    // const email = localStorage.getItem("currentUser");
-    // console.log("Logging out user:", email);
-    // if (!email) {
-    //     localStorage.clear();
-    //     window.location.href = "/app/login.html";
-    //     return;
-    // }
 
     fetch("https://claritybackend.onrender.com/LogOut-User", {
         method: "POST",
@@ -165,7 +104,7 @@ export function logout() {
     })
     .then(data => {
 
-        console.log("Logout successful:", data);
+      
 
         localStorage.clear();
        localStorage.clear();
@@ -491,14 +430,14 @@ export function renderShell(activeKey) {
     // Get latest plan from backend
     checkPlanStatus(user.email).then((plan) => {
 
-        console.log("Plan from backend:", plan);
+     
 
         const isPremium =
             plan === "Premium" ||
             plan === "premium" ||
             plan === "PREMIUM";
 
-        console.log("isPremium:", isPremium);
+       
 
         // =====================================
         // SIDEBAR ITEMS
@@ -825,7 +764,7 @@ const response = await fetch(
 
     const plan = await response.text();
 
-    console.log("Plan for", email, ":", plan);
+    
     localStorage.setItem("clarity_user_plan", plan); // Store the plan in Local Storage
     return plan;
 

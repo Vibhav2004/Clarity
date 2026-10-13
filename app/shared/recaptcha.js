@@ -84,27 +84,7 @@ if (window.grecaptcha?.render) {
 
 }
 
-// export async function getRecaptchaToken() {
-// await createRenderPromise();
 
-
-// if (widgetId === null ||
-//     typeof window.grecaptcha?.getResponse !== "function") {
-//     throw new Error("CAPTCHA is not ready. Please refresh and try again.");
-// }
-
-// const token = window.grecaptcha.getResponse(widgetId);
-
-// if (!token) {
-//     throw new Error(
-//         "Please complete the 'I'm not a robot' CAPTCHA."
-//     );
-// }
-
-// return token;
-
-
-// }
 
 export function resetRecaptcha() {
 if (

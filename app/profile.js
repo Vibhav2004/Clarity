@@ -14,9 +14,7 @@ async function render() {
 
   try {
 
-    // const response = await fetch(
-    //   API.profile(user.email)
-    // );
+   
     const sessionId = localStorage.getItem("sessionId");
 
 const response = await fetch(

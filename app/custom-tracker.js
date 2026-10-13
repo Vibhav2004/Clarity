@@ -26,15 +26,7 @@
         renderAll();
       }),
     );
-    // document.getElementById("addTracker").addEventListener("click", async () => {
-    //   const name = prompt(await t("customTracker.newTrackerPrompt"));
-    //   if (!name) return;
-    //   const t = { id: uid(), name, steps: [], createdAt: new Date().toISOString(), userEmail: user.email };
-    //   trackers.push(t);
-    //   persist(t);
-    //   active = t;
-    //   renderAll();
-    // });
+
     document.getElementById("addTracker").addEventListener("click", async () => {
 
     const name =

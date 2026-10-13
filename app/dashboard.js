@@ -61,7 +61,7 @@ const res = await fetch(
     const roadmaps =
       await res.json();
 
-    console.log("Roadmaps:", roadmaps);
+   
 
     /* ==========================
        STORE IN LOCAL STORAGE

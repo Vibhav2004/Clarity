@@ -252,23 +252,7 @@ async function saveTracker(
     trackerData
 ) {
 
-    // const response =
-    //     await fetch(
-    //       API.saveTracker(),
-    //         {
-    //             method: "POST",
-
-    //             headers: {
-    //                 "Content-Type":
-    //                     "application/json"
-    //             },
-
-    //             body:
-    //                 JSON.stringify(
-    //                     trackerData
-    //                 )
-    //         }
-    //     );
+  
     const sessionId = localStorage.getItem("sessionId");
 
 const payload = {
@@ -357,90 +341,7 @@ async function addToTracker() {
     }
 }
 
-// async function addToTracker() {
 
-//     try {
-
-//         // ====================
-//         // USER
-//         // ====================
-
-//         const user =
-//             getUserInfo();
-
-//         console.log(
-//             "User:",
-//             user
-//         );
-
-//         // ====================
-//         // ROADMAP
-//         // ====================
-// const roadmapInfo =
-//     getRoadmapData();
-
-// console.log(roadmapInfo);
-
-//         // ====================
-//         // BUILD PAYLOAD
-//         // ====================
-
-//         let trackerData;
-
-// if (
-//     roadmapInfo.type ===
-//     "CustomRoadmap"
-// ) {
-
-//     trackerData =
-//         buildCustomTracker(
-//             roadmapInfo,
-//             user
-//         );
-
-// } else {
-
-//     trackerData =
-//         buildGeneratedTracker(
-//             roadmapInfo,
-//             user
-//         );
-// }
-
-//         console.log(
-//             "Payload:",
-//             trackerData
-//         );
-
-//         // ====================
-//         // SAVE
-//         // ====================
-
-//         const result =
-//             await saveTracker(
-//                 trackerData
-//             );
-
-//         console.log(
-//             result
-//         );
-
-//         alert(
-//             "Roadmap added to tracker successfully"
-//         );
-
-//     } catch (error) {
-
-//         console.error(
-//             error
-//         );
-
-//         alert(
-//             error.message ||
-//             "Something went wrong"
-//         );
-//     }
-// }
 
 
 
@@ -1398,20 +1299,6 @@ function renderCustomRoadmap(data) {
 
    
 
-  // console.log("Roadmap Data:", roadmapData);
-
-  // if (!roadmapData || !roadmapData.length) {
-  //   console.error("roadmapData is empty");
-  //   return;
-  // }
-
-  // const level =
-  //   localStorage.getItem(
-  //     "selectedLevel"
-  //   ) || "beginner";
-
-  // const roadmap =
-  //   roadmapData[0]?.[level];
   const selectedKey =
   localStorage.getItem(
     "selectedRoadmap"

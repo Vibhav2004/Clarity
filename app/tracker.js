@@ -7,9 +7,7 @@ const content = document.getElementById("content");
 
 try {
 
-//   const response = await fetch(
-//         API.allTrackers(user.email)
-//   );
+
 const sessionId = localStorage.getItem("sessionId");
 
 const response = await fetch(

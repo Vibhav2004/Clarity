@@ -17,13 +17,22 @@ async function render() {
         <div><div class="label" data-i18n="settings.weeklyDigest">Weekly email digest</div><div class="sub" data-i18n="settings.weeklyDigestSub">A short recap of your progress every Monday.</div></div>
         <div class="toggle ${set.emailUpdates ? "on" : ""}" data-key="emailUpdates"></div>
       </div>
+
+
          <div class="row">
-        <div><div class="label" data-i18n="settings.weeklyDigest">Weekly email digest</div><div class="sub" data-i18n="settings.weeklyDigestSub">A short recap of your progress every Monday.</div></div>
-        <div class="toggle ${set.emailUpdates ? "on" : ""}" data-key="emailUpdates"></div>
+        <div>
+        <div class="label" data-i18n="settings.weeklyDigest">Show Your Support</div>
+        <div class="sub" data-i18n="settings.weeklyDigestSub">Show us some support by donating and helping us run our server's</div>
+        </div>
+        <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TmbzjFfasSvKgh" async> </script> </form>
       </div>
+
+
          <div class="row">
-        <div><div class="label" data-i18n="settings.weeklyDigest">Weekly email digest</div><div class="sub" data-i18n="settings.weeklyDigestSub">A short recap of your progress every Monday.</div></div>
-        <div class="toggle ${set.emailUpdates ? "on" : ""}" data-key="emailUpdates"></div>
+        <div> 
+            <div class="label" data-i18n="settings.weeklyDigest">Give Review</div>
+            <div class="sub" data-i18n="settings.weeklyDigestSub">Help us improve by giving a review</div></div>
+        <button href="https://docs.google.com/forms/d/e/1FAIpQLSflXs54HpthA0eTv3xhd9tantQedD-qJxD8QFUwsLe39s_sug/viewform?usp=publish-editor">Feedback</button>
       </div>
       <div class="row">
         <div><div class="label" data-i18n="settings.theme">Theme</div><div class="sub">${await t("settings.themeCurrent", { theme: set.theme })}</div></div>
